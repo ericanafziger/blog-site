@@ -7,7 +7,61 @@
     <script src="js/scripts.js"></script>
     <title>Blog Site</title>
   </head>
-  <body>
-
+  <body background="img/bckgd.jpg">
+    <div class="container">
+      <div id="landingPage">
+        <form id="userRegister">
+          <h1>Create a new Blogger Profile</h1>
+          <br>
+          <div class="form-group">
+            <label for="blogTitle">Blog Title</label>
+            <input type="text" class="form-control blogTitle">
+          </div>
+          <div class="form-group">
+            <label for="userName">Username</label>
+            <input type="text" class="form-control userName">
+          </div>
+          <div class="form-group">
+            <label for="first-name">First name</label>
+            <input type="text" class="form-control first-name">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last name</label>
+            <input type="text" class="form-control last-name">
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control city">
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control state">
+          </div>
+          <div class="form-group">
+            <label for="bio">Short bio</label>
+            <input type="text" class="form-control bio">
+          </div>
+          <div class="form-group">
+            <label for="avatar">User avatar (Enter URL of an image you want to upload)</label>
+            <input type="text" class="form-control avatar">
+          </div>
+          <button type="submit" class="btn" id="submitProfile">Submit</button>
+        </form>
+      </div>
+      <div id="mainblog">
+        <div class="jumbotron">
+          <h1></h1>
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="newBlogEntry">
+            </div>
+            <div class="allBlogEntries">
+            </div>
+          </div>
+          <div class="col-md-3">
+          </div>
+      </div>
+    </div>
   </body>
 </html>
