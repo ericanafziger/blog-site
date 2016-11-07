@@ -32,6 +32,13 @@ var BlogEntry = function(entryTitle, photos, entryText, entryTags) {
   this.entryTags = [];
 };
 
+BlogEntry.prototype.addTags = function(){
+
+}
+
+var addTags = function(tags) {
+  this.blogEntry.extraTags = tags
+}
 
 //frontend logic
 $(document).ready(function(){
@@ -63,6 +70,31 @@ $(document).ready(function(){
     $("#userSidebar").show();
     showSidebarInput();
     console.log(user);
+  });
+
+  $("#add-blogTag").click(function() {
+    $(".justTags").append('<input type="text" class="form-control blogEntryTags">' +
+                             '<br>');
+                             });
+
+  $("#blogEntryForm").submit(function(event){
+    event.preventDefault();
+    var entryTitle = $(".blogEntryTitle").val();
+    var photos = $(".blogEntryImage").val();
+    var entryText = $(".blogEntryContent").val();
+
+    var blogEntry = new BlogEntry(entryTitle, photos, entryText);
+
+    $(".blogEntryTags").each(function() {
+      var entryTag = $(this).val();
+      blogEntry.entryTags.push(entryTag);
+    });
+    user.blogEntries.push(blogEntry);
+    console.log(user);
+
+
+
+
   });
 
 });
