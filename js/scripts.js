@@ -6,6 +6,7 @@ var Bio = function (avatarURL, avatarPhoto, fullName, nameArr, bioText, userName
   this.nameArr = [];
   this.bioText = bioText;
   this.userName = userName;
+  this.city = city;
   this.state = state;
 };
 Bio.prototype={
@@ -28,12 +29,23 @@ var BlogEntry = function(entryTitle, photos, entryText, entryTags) {
   this.entryTitle = entryTitle;
   this.photos = [];
   this.entryText = entryText;
-  this.entryTags = entryTags;
+  this.entryTags = [];
 };
+
 
 //frontend logic
 $(document).ready(function(){
   var user = new User();
+
+  var showSidebarInput = function(){
+    $(".userName").text(user.bio.userName);
+    $(".avatarImg").html(user.bio.avatarPhoto);
+    $(".fullName").text(user.bio.fullName);
+    $(".location").text(user.bio.city + ", " + user.bio.state);
+    $(".bio").text(user.bio.bioText);
+    // $("#sidebarBlogList").prepend();
+  };
+
   $("#userRegister").submit(function(event){
     event.preventDefault();
     user.bio.nameArr[0] = $(".first-name").val();
@@ -48,15 +60,9 @@ $(document).ready(function(){
     user.bio.addImgTag();
     $("#landingPage").hide();
     $("#mainblog").show();
+    $("#userSidebar").show();
     showSidebarInput();
     console.log(user);
   });
-  var showSidebarInput = function(){
-    $(".userName").text(user.bio.userName);
-    $(".avatarImg").html(user.bio.avatarPhoto);
-    $(".fullName").text(user.bio.fullName);
-    $(".location").text(user.bio.city + ", " + user.bio.state);
-    $(".bio").text(user.bio.bioText);
-    // $("#sidebarBlogList").prepend();
-  };
+
 });
