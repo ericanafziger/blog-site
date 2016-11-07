@@ -7,7 +7,7 @@
     <script src="js/scripts.js"></script>
     <title>Blog Site</title>
   </head>
-  <body background="img/bckgd.jpg">
+  <body>
     <div class="container">
       <div id="landingPage">
         <form id="userRegister">
@@ -48,18 +48,75 @@
           <button type="submit" class="btn" id="submitProfile">Submit</button>
         </form>
       </div>
+<!-- Main blog where user enters blog title, blog text content, tags and photo -->
       <div id="mainblog">
         <div class="jumbotron">
-          <h1></h1>
+          <h1>Name of User's Blog</h1>
         </div>
         <div class="row">
           <div class="col-md-9">
             <div class="newBlogEntry">
+              <form class="blogEntryForm">
+                <div class="form-group">
+                  <label for="blogEntryTitle">Blog Entry Title</label>
+                  <input type="text" class="form-control blogEntryTitle">
+                </div>
+                <div class="form-group">
+                  <label for="blogEntryContent">Blog Entry</label>
+                  <input size="100px" type="text" class="form-control blogEntryContent">
+                </div>
+          <!-- Tag entry field that can add additional tags appended with javascript -->
+                <div class="form-group">
+                  <label for="blogEntryTags">Blog Entry Tags</label>
+                  <input type="text" class="form-control blogEntryTags">
+                </div>
+                <span class="btn btn-primary" id="add-blogTag">Add Another Tag</span>
+
+                <div class="form-group">
+                  <label for="blogEntryImage">Upload Image (Enter URL of an image you want to upload)</label>
+                  <input type="text" class="form-control blogEntryImage">
+                </div>
+              </form>
             </div>
+      <!-- Receptacle where each blog entry will be prepended. -->
             <div class="allBlogEntries">
+              <div id="blogEntryThree">
+                <img src="https://static-s.aa-cdn.net/img/ios/1076573635/6744c499bef845d099482c78c0d974e5?v=1" alt="blog three Photo" />
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+              </div>
+              <div id="blogEntryTwo">
+                <img src="https://static-s.aa-cdn.net/img/ios/397079206/a4814993d0560c7dd66b90be38774224?v=1" alt="blog Two Photo" />
+              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+              The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+              </div>
+              <div id="blogEntryOne">
+              <img src="https://static-s.aa-cdn.net/img/ios/912695455/1795d3d137aaab110233dc05047c1902?v=1" alt="blog One Photo" />
+              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+              The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+              </div>
             </div>
           </div>
-          <div class="col-md-3">
+    <!-- Sidebar that holds user info -->
+          <div class="col-md-3" id="userSidebar">
+            <div id="sidebarProfile">
+              <h3>User Profile Name</h3>
+              <span id="userAvatar"><img src="http://66.media.tumblr.com/avatar_6acabcb46c0a_96.png" alt="user avatar" /></span>
+              <p>First and Last Name</p>
+              <p>City, State</p>
+              <p>Short user bio</p>
+            </div>
+            <div id="sidebarBlogEntries">
+              <h4>List of Entries</h4>
+              <ul id="sidebarBlogList">
+                <li><a href="#blogEntryOne">Blog Entry 1</a></li>
+                <li><a href="#blogEntryTwo">Blog Entry 2</a></li>
+                <li><a href="#blogEntryThree">Blog Entry 3</a></li>
+              </ul>
+            </div>
           </div>
       </div>
     </div>
