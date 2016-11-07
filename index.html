@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <title>Blog Site</title>
   </head>
   <body>
@@ -55,11 +56,15 @@
         </div>
         <div class="row">
           <div class="col-md-9">
-            <div class="newBlogEntry">
+            <div id="newBlogEntry">
               <form class="blogEntryForm">
                 <div class="form-group">
                   <label for="blogEntryTitle">Blog Entry Title</label>
                   <input type="text" class="form-control blogEntryTitle">
+                </div>
+                <div class="form-group">
+                  <label for="blogEntryImage">Upload Image (Enter URL of an image you want to upload)</label>
+                  <input type="text" class="form-control blogEntryImage">
                 </div>
                 <div class="form-group">
                   <label for="blogEntryContent">Blog Entry</label>
@@ -71,11 +76,6 @@
                   <input type="text" class="form-control blogEntryTags">
                 </div>
                 <span class="btn btn-primary" id="add-blogTag">Add Another Tag</span>
-
-                <div class="form-group">
-                  <label for="blogEntryImage">Upload Image (Enter URL of an image you want to upload)</label>
-                  <input type="text" class="form-control blogEntryImage">
-                </div>
               </form>
             </div>
       <!-- Receptacle where each blog entry will be prepended. -->

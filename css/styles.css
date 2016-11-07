@@ -14,6 +14,19 @@
   text-decoration: underline;
 }
 
+.jumbotron {
+  margin-top: 20px;
+  background-color: #ffeead;
+  font-family: 'Comfortaa', cursive;
+}
+
+#landingPage {
+  display: none;
+}
+
+#newBlogEntry {
+  display: none;
+}
 /*#mainblog, .allBlogEntries {
   display: none;
 }*/
@@ -30,12 +43,18 @@ body {
 
 /* Sidebar styling */
 
-.avatarImg {
+.avatarImg img {
   border-radius: 50%;
   border: 1px solid;
 }
 
 .allBlogEntries img {
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: 200px;
   border-radius: 10px;
   border: 1px solid;
 }
