@@ -10,43 +10,55 @@
   </head>
   <body>
     <div class="container">
+      <div id="siteName">
+        <!-- <h1>Music Blog</h1> -->
+        <img src="img/treble-clef-logo.jpg" alt="treble-clef-logo" />
+      </div>
       <div id="landingPage">
         <form id="userRegister">
-          <h1>Create a new Blogger Profile</h1>
+          <h1>Create a New <span class="highlight">Treble</span>Cleff Profile</h1>
           <br>
-          <div class="form-group">
-            <label for="blogTitle">Blog Title</label>
-            <input type="text" class="form-control blogTitle">
-          </div>
-          <div class="form-group">
-            <label for="userName">Username</label>
-            <input type="text" class="form-control userName">
-          </div>
-          <div class="form-group">
-            <label for="first-name">First name</label>
-            <input type="text" class="form-control first-name">
-          </div>
-          <div class="form-group">
-            <label for="last-name">Last name</label>
-            <input type="text" class="form-control last-name">
-          </div>
-          <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" class="form-control city">
-          </div>
-          <div class="form-group">
-            <label for="state">State</label>
-            <input type="text" class="form-control state">
-          </div>
-          <div class="form-group">
-            <label for="bio">Short bio</label>
-            <textarea class="form-control bio" rows="10"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="avatar">User avatar (Enter URL of an image you want to upload)</label>
-            <input type="text" class="form-control avatar">
-          </div>
-          <button type="submit" class="btn" id="submitProfile">Submit</button>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="blogTitle">Blog Title</label>
+                <input type="text" class="form-control blogTitle">
+              </div>
+              <div class="form-group">
+                <label for="userName">Username</label>
+                <input type="text" class="form-control userName">
+              </div>
+              <div class="form-group">
+                <label for="first-name">First name</label>
+                <input type="text" class="form-control first-name">
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last name</label>
+                <input type="text" class="form-control last-name">
+              </div>
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control city">
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" class="form-control state">
+              </div>
+            </div><!--end of col-1-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="bio">Short bio</label>
+                <textarea class="form-control bio" rows="10"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="avatar">User avatar (Enter URL of an image you want to upload)</label>
+                <input type="text" class="form-control avatar">
+              </div>
+            </div><!--end of col-2-->
+          </div><!--end of row 1-->
+          <div class="row">
+            <button type="submit" class="btn" id="submitProfile">Submit</button>
+          </div><!--end of row2-->
         </form>
       </div>
 <!-- Main blog where user enters blog title, blog text content, tags and photo -->
