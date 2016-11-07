@@ -25,19 +25,23 @@ var User = function(bio, blogEntries, blogTitle){
   this.blogTitle = blogTitle;
 };
 
-var BlogEntry = function(entryTitle, photos, entryText, entryTags) {
+var BlogEntry = function(entryTitle, photos, entryText, entryTags, blogToString) {
   this.entryTitle = entryTitle;
-  this.photos = [];
+  this.photos = photos;
   this.entryText = entryText;
   this.entryTags = [];
+  this.asString = blogToString;
 };
 
-BlogEntry.prototype.addTags = function(){
+BlogEntry.prototype.toString = function(idNum){
+  this.asString = '<div id="blogEntry' + idNum + '">' + '<img src = "' + this.photos + '" alt = "blog' + idNum + ' photo"><br><br>'
 
+
+  this.blogEntries[].
 }
 
 var addTags = function(tags) {
-  this.blogEntry.extraTags = tags
+  this.blogEntry.extraTags = tags;
 }
 
 //frontend logic
@@ -82,18 +86,20 @@ $(document).ready(function(){
     var entryTitle = $(".blogEntryTitle").val();
     var photos = $(".blogEntryImage").val();
     var entryText = $(".blogEntryContent").val();
-
     var blogEntry = new BlogEntry(entryTitle, photos, entryText);
 
     $(".blogEntryTags").each(function() {
       var entryTag = $(this).val();
       blogEntry.entryTags.push(entryTag);
     });
+    blogEntry.asString(blogEntries.length-1);
+
     user.blogEntries.push(blogEntry);
     console.log(user);
 
+    $("#blogPost").prepend('<div>'
 
-
+    );
 
   });
 
