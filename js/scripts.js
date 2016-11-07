@@ -1,15 +1,10 @@
 //backend logic
-var User = function(bio, blogEntries, blogTitle){
-  this.bio = bio;
-  this.blogEntries = [];
-  this.blogTitle = blogTitle;
+var Bio = function (avartarPhoto, fullName, nameArr, bioText){
+  this.avartarPhoto = avartarPhoto;
+  this.fullName = fullName;
+  this.nameArr = [];
+  this.bioText = bioText;
 };
- var Bio = function (avartarPhoto, fullName, nameArr, bioText){
-   this.avartarPhoto = avartarPhoto;
-   this.fullName = fullName;
-   this.nameArr = [];
-   this.bioText = bioText;
- };
 Bio.prototype={
   constructor: Bio,
   getFullName: function(){
@@ -17,8 +12,13 @@ Bio.prototype={
   }
 };
 
+var User = function(bio, blogEntries, blogTitle){
+  this.bio = new Bio();
+  this.blogEntries = [];
+  this.blogTitle = blogTitle;
+};
 
-var BlogEntry = function() {
+var BlogEntry = function(entryTitle, photos, entryText, entryTags) {
   this.entryTitle = entryTitle;
   this.photos = [];
   this.entryText = entryText;
@@ -27,6 +27,15 @@ var BlogEntry = function() {
 
 //frontend logic
 $(document).ready(function(){
+  $("#userRegister button").submit(function(event){
+    event.preventDefault();
 
+    var user = new User();
+    user.bio.nameArr[0] = $(".first-name").val();
+    user.bio.nameArr[1] = $(".last-name").val();
+    getFullName();
+
+    $("").hide();
+  })
 
 });
