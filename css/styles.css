@@ -1,4 +1,10 @@
-
+a {
+  color: #272C2B;
+  text-decoration: underline;
+}
+a:hover {
+  color: #0E6251;
+}
 
 .blogEntryContent {
   height: 150px;
@@ -22,20 +28,20 @@
   font-family: 'Comfortaa', cursive;
 }
 
-/*#landingPage {
-  display: none;
-}*/
-
-#newBlogEntry {
-  display: none;
-}
-#mainblog {
+#landingPage {
   display: none;
 }
 
-/*.allBlogEntries {
+/*#newBlogEntry {
   display: none;
 }*/
+/*#mainblog {
+  display: none;
+}*/
+
+.allBlogEntries {
+  display: none;
+}
 
 body {
   background: url(../img/white-background1.jpg);
@@ -56,12 +62,15 @@ body {
   color: #0E6251;
 }
 
+#mainblog h1 {
+  margin:  0 0 40px 0;
+}
 
-#userRegister {
+#userRegister, #mainblog {
   background:rgba(255,255,255, 0.7);
   padding: 5%;
 }
-#userRegister h1 {
+#userRegister h1, #mainblog h1 {
   font-size: 4em;
   font-weight: 300;
   text-align: center;
@@ -69,7 +78,7 @@ body {
 #userRegister input, #userRegister textarea {
   width: 90%;
 }
-#submitProfile {
+#submitProfile, #submitBlogEntry {
   display: block;
   margin: 0 auto;
   margin: 0 auto;
@@ -77,12 +86,26 @@ body {
   background: rgb(0,0,0);
   color: white;
 }
-#submitProfile:hover {
+#submitProfile:hover, #submitBlogEntry:hover{
   background: #0E6251;
 }
-
+.btn-primary {
+  background: #0E6251;
+}
+.btn-primary:hover {
+  background: #0B4C40;
+  color: white;
+}
 
 /* Sidebar styling */
+
+#userSidebar {
+  background: rgba(14, 98, 81, 0.2);
+  height: 400px;
+  overflow: auto;
+  margin: 25px 0 0 0;
+  border-radius: 10px
+}
 
 .avatarImg img {
   border-radius: 50%;
