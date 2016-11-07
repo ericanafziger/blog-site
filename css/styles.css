@@ -20,14 +20,18 @@
   font-family: 'Comfortaa', cursive;
 }
 
-#landingPage {
+/*#landingPage {
   display: none;
-}
+}*/
 
 #newBlogEntry {
   display: none;
 }
-/*#mainblog, .allBlogEntries {
+#mainblog {
+  display: none;
+}
+
+/*.allBlogEntries {
   display: none;
 }*/
 
