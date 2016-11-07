@@ -5,115 +5,130 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <title>Blog Site</title>
   </head>
   <body>
     <div class="container">
+      <div id="siteName">
+        <!-- <h1>Music Blog</h1> -->
+        <img src="img/treble-clef-logo.jpg" alt="treble-clef-logo" />
+      </div>
       <div id="landingPage">
         <form id="userRegister">
-          <h1>Create a new Blogger Profile</h1>
+          <h1>Create a New <span class="highlight">Treble</span>Cleff Profile</h1>
           <br>
-          <div class="form-group">
-            <label for="blogTitle">Blog Title</label>
-            <input type="text" class="form-control blogTitle">
-          </div>
-          <div class="form-group">
-            <label for="userName">Username</label>
-            <input type="text" class="form-control userName">
-          </div>
-          <div class="form-group">
-            <label for="first-name">First name</label>
-            <input type="text" class="form-control first-name">
-          </div>
-          <div class="form-group">
-            <label for="last-name">Last name</label>
-            <input type="text" class="form-control last-name">
-          </div>
-          <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" class="form-control city">
-          </div>
-          <div class="form-group">
-            <label for="state">State</label>
-            <input type="text" class="form-control state">
-          </div>
-          <div class="form-group">
-            <label for="bio">Short bio</label>
-            <input type="text" class="form-control bio">
-          </div>
-          <div class="form-group">
-            <label for="avatar">User avatar (Enter URL of an image you want to upload)</label>
-            <input type="text" class="form-control avatar">
-          </div>
-          <button type="submit" class="btn" id="submitProfile">Submit</button>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="blogTitle">Blog Title</label>
+                <input type="text" class="form-control blogTitle">
+              </div>
+              <div class="form-group">
+                <label for="userName">Username</label>
+                <input type="text" class="form-control userName">
+              </div>
+              <div class="form-group">
+                <label for="first-name">First name</label>
+                <input type="text" class="form-control first-name">
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last name</label>
+                <input type="text" class="form-control last-name">
+              </div>
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control city">
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" class="form-control state">
+              </div>
+            </div><!--end of col-1-->
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="bio">Short bio</label>
+                <textarea class="form-control bio" rows="10"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="avatar">User avatar (Enter URL of an image you want to upload)</label>
+                <input type="text" class="form-control avatar">
+              </div>
+            </div><!--end of col-2-->
+          </div><!--end of row 1-->
+          <div class="row">
+            <button type="submit" class="btn" id="submitProfile">Submit</button>
+          </div><!--end of row2-->
         </form>
       </div>
 <!-- Main blog where user enters blog title, blog text content, tags and photo -->
       <div id="mainblog">
-        <div class="jumbotron">
-          <h1>Name of User's Blog</h1>
-        </div>
+        <h1><span class="blogTitle">Name of User's Blog</span></h1>
         <div class="row">
           <div class="col-md-9">
-            <div class="newBlogEntry">
-              <form id="blogEntryForm">
+            <div id="newBlogEntry">
+              <form class="blogEntryForm">
                 <div class="form-group">
                   <label for="blogEntryTitle">Blog Entry Title</label>
                   <input type="text" class="form-control blogEntryTitle">
                 </div>
                 <div class="form-group">
-                  <label for="blogEntryContent">Blog Entry</label>
-                  <input size="100px" type="text" class="form-control blogEntryContent">
-                </div>
-          <!-- Tag entry field that can add additional tags appended with javascript -->
-                <div class="form-group" id="blogTagsDiv">
-                  <div class="justTags">
-                  <label for="blogEntryTags">Blog Entry Tags</label>
-                  <input type="text" class="form-control blogEntryTags">
-                  <br>
-                  </div>
-                  <span class="btn btn-primary" id="add-blogTag">Add Another Tag</span>
-                </div>
-
-
-                <div class="form-group">
                   <label for="blogEntryImage">Upload Image (Enter URL of an image you want to upload)</label>
                   <input type="text" class="form-control blogEntryImage">
                 </div>
-                <br>
-                <button type="submit" class="btn" id="submitPost">Submit</button>
+                <div class="form-group">
+                  <label for="blogEntryContent">Blog Entry</label>
+                  <textarea class="form-control blogEntryContent" rows="10"></textarea>
+                </div>
+          <!-- Tag entry field that can add additional tags appended with javascript -->
+                <div class="form-group">
+                  <label for="blogEntryTags">Blog Entry Tags</label>
+                  <input type="text" class="form-control blogEntryTags">
+                </div>
+                <span class="btn btn-primary" id="add-blogTag">Add Another Tag</span>
+                <button type="submit" class="btn" id="submitBlogEntry">Create post</button>
               </form>
             </div>
       <!-- Receptacle where each blog entry will be prepended. -->
             <div class="allBlogEntries">
               <div id="blogEntryThree">
-                <img src="https://static-s.aa-cdn.net/img/ios/1076573635/6744c499bef845d099482c78c0d974e5?v=1" alt="blog three Photo" />
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                <h2><span class="postTitle">Post title</span></h2>
+                <h5><span class="date">Date</span></h5>
+                <span class="postImage"><img src="https://static-s.aa-cdn.net/img/ios/1076573635/6744c499bef845d099482c78c0d974e5?v=1" alt="blog three Photo" /></span>
+                <br>
+                <br>
+                <span class="postBodyCopy">
+                  <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
 
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                  <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+                </span>
+                <br>
+                <div class="blogTags">
+                  <span class="blogTagID">#waterfall</span>, <span class="blogTagID">#nature</span>, <span class="blogTagID">#sunlight</span>, <span class="blogTagID">#forest</span>
+                  <br>
+                  <br>
+                </div>
               </div>
-              <div id="blogEntryTwo">
+              <!-- <div id="blogEntryTwo">
                 <img src="https://static-s.aa-cdn.net/img/ios/397079206/a4814993d0560c7dd66b90be38774224?v=1" alt="blog Two Photo" />
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
               The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-              </div>
-              <div id="blogEntryOne">
+              </div> -->
+              <!-- <div id="blogEntryOne">
               <img src="https://static-s.aa-cdn.net/img/ios/912695455/1795d3d137aaab110233dc05047c1902?v=1" alt="blog One Photo" />
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
               The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-              </div>
+              </div> -->
             </div>
           </div>
     <!-- Sidebar that holds user info -->
           <div class="col-md-3" id="userSidebar">
             <div id="sidebarProfile">
-              <h3>User Profile Name</h3>
-              <span id="userAvatar"><img src="http://66.media.tumblr.com/avatar_6acabcb46c0a_96.png" alt="user avatar" /></span>
-              <p>First and Last Name</p>
-              <p>City, State</p>
-              <p>Short user bio</p>
+              <h3><span class="userName">User Profile Name</span></h3>
+              <span class="avatarImg"><img src="http://66.media.tumblr.com/avatar_6acabcb46c0a_96.png" alt="user avatar" /></span>
+              <p><span class="fullName">First and Last Name</span></p>
+              <p><span class="location">City, State</span></p>
+              <p><span class="bio">Short user bio</span></p>
             </div>
             <div id="sidebarBlogEntries">
               <h4>List of Entries</h4>
