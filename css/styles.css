@@ -7,3 +7,35 @@
 .bio {
   height:
 }
+
+.blogTagID {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+/*#mainblog, .allBlogEntries {
+  display: none;
+}*/
+
+body {
+  background-color: #c1d4f2;
+}
+
+#userRegister h1 {
+  font-size: 5em;
+  font-weight: 300;
+}
+
+
+/* Sidebar styling */
+
+.avatarImg {
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.allBlogEntries img {
+  border-radius: 10px;
+  border: 1px solid;
+}

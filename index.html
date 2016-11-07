@@ -39,7 +39,7 @@
           </div>
           <div class="form-group">
             <label for="bio">Short bio</label>
-            <input type="text" class="form-control bio">
+            <textarea class="form-control bio" rows="10"></textarea>
           </div>
           <div class="form-group">
             <label for="avatar">User avatar (Enter URL of an image you want to upload)</label>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="form-group">
                   <label for="blogEntryContent">Blog Entry</label>
-                  <input size="100px" type="text" class="form-control blogEntryContent">
+                  <textarea class="form-control blogEntryContent" rows="10"></textarea>
                 </div>
           <!-- Tag entry field that can add additional tags appended with javascript -->
                 <div class="form-group">
@@ -82,9 +82,17 @@
             <div class="allBlogEntries">
               <div id="blogEntryThree">
                 <img src="https://static-s.aa-cdn.net/img/ios/1076573635/6744c499bef845d099482c78c0d974e5?v=1" alt="blog three Photo" />
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                <br>
+                <br>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
 
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+                <br>
+                <div class="blogTags">
+                  <span class="blogTagID">#waterfall</span>, <span class="blogTagID">#nature</span>, <span class="blogTagID">#sunlight</span>, <span class="blogTagID">#forest</span>
+                  <br>
+                  <br>
+                </div>
               </div>
               <div id="blogEntryTwo">
                 <img src="https://static-s.aa-cdn.net/img/ios/397079206/a4814993d0560c7dd66b90be38774224?v=1" alt="blog Two Photo" />
@@ -103,11 +111,11 @@
     <!-- Sidebar that holds user info -->
           <div class="col-md-3" id="userSidebar">
             <div id="sidebarProfile">
-              <h3>User Profile Name</h3>
-              <span id="userAvatar"><img src="http://66.media.tumblr.com/avatar_6acabcb46c0a_96.png" alt="user avatar" /></span>
-              <p>First and Last Name</p>
-              <p>City, State</p>
-              <p>Short user bio</p>
+              <h3><span class="userName">User Profile Name</span></h3>
+              <span class="avatarImg"><img src="http://66.media.tumblr.com/avatar_6acabcb46c0a_96.png" alt="user avatar" /></span>
+              <p><span class="fullName">First and Last Name</span></p>
+              <p><span class="location">City, State</span></p>
+              <p><span class="bio">Short user bio</span></p>
             </div>
             <div id="sidebarBlogEntries">
               <h4>List of Entries</h4>
