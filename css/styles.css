@@ -1,8 +1,8 @@
-a {
+a, .blogTagID {
   color: #272C2B;
   text-decoration: underline;
 }
-a:hover {
+a:hover, .blogTagID:hover {
   color: #0E6251;
 }
 
@@ -18,30 +18,22 @@ a:hover {
 
 .blogTagID {
   cursor: pointer;
-  color: blue;
-  text-decoration: underline;
-}
-
-.jumbotron {
-  margin-top: 20px;
-  background-color: #ffeead;
-  font-family: 'Comfortaa', cursive;
 }
 
 #landingPage {
   display: none;
 }
 
-/*#newBlogEntry {
+#newBlogEntry {
   display: none;
-}*/
+}
 /*#mainblog {
   display: none;
 }*/
 
-.allBlogEntries {
+/*.allBlogEntries {
   display: none;
-}
+}*/
 
 body {
   background: url(../img/white-background1.jpg);
