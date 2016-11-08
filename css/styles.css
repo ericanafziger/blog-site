@@ -49,7 +49,14 @@ body {
 }
 #userRegister input, #userRegister textarea {
   width: 90%;
+  max-width: 90%;
+  max-height: 100%;
 }
+
+#userRegister textarea {
+  height: 110px;
+}
+
 #submitProfile, #submitBlogEntry {
   display: block;
   margin: 0 auto;
@@ -139,6 +146,13 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+.centerVid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
 }
 
 /*////////////////////////////////// sidebar stying ////////////////////////////////*/
