@@ -25,21 +25,36 @@ var User = function(bio, blogEntries, blogTitle){
   this.blogTitle = blogTitle;
 };
 
-var BlogEntry = function(entryTitle, photos, entryText, entryTags, blogToString) {
+var BlogEntry = function(entryTitle, photos, entryText, entryTags, blogAsString) {
   this.entryTitle = entryTitle;
   this.photos = photos;
   this.entryText = entryText;
   this.entryTags = [];
-  this.asString = blogToString;
+  this.asString = blogAsString;
+  this.tagsAsStr = "";
 };
 
-BlogEntry.prototype.toString = function(idNum){
-  this.asString = '<div id="blogEntry' + idNum + '">' + '<img src = "' + this.photos + '" alt = "blog' + idNum + ' photo"><br><br>'
+BlogEntry.prototype={
+  constructor: BlogEntry,
 
+  getEntryTags: function(){
 
-  this.blogEntries[].
-}
+    for (i=0; i<this.entryTags.length; i++){
+      if(i===this.entryTags.length-1){
+      this.tagsAsStr += "<span class='blogTagID'>" + this.entryTags[i] + "</span>";
+      }
+      else {
+      this.tagsAsStr += "<span class='blogTagID'>" + this.entryTags[i] + "</span>" + ", ";
+      };
+    };
+  },
 
+  toString: function(idNum){
+
+    this.asString = '<div id="blogEntry' + idNum + '"><h3>' + this.entryTitle + '</h3><br><br><img src = "' + this.photos + '" alt = "blog' + idNum + ' photo"><br><br><p>' + this.entryText + '</p><br>' + this.tagsAsStr + '<br><br>' + '--------------------------HR----------------------------' + '<br><br>';
+  }
+
+};
 var addTags = function(tags) {
   this.blogEntry.extraTags = tags;
 }
@@ -79,9 +94,9 @@ $(document).ready(function(){
   $("#add-blogTag").click(function() {
     $(".justTags").append('<input type="text" class="form-control blogEntryTags">' +
                              '<br>');
-                             });
+  });
 
-  $("#blogEntryForm").submit(function(event){
+  $(".blogEntryForm").submit(function(event){
     event.preventDefault();
     var entryTitle = $(".blogEntryTitle").val();
     var photos = $(".blogEntryImage").val();
@@ -92,14 +107,13 @@ $(document).ready(function(){
       var entryTag = $(this).val();
       blogEntry.entryTags.push(entryTag);
     });
-    blogEntry.asString(blogEntries.length-1);
+    blogEntry.getEntryTags();
+    blogEntry.toString(user.blogEntries.length-1);
 
     user.blogEntries.push(blogEntry);
     console.log(user);
-
-    $("#blogPost").prepend('<div>'
-
-    );
+    $(".allBlogEntries").prepend(blogEntry.asString);
+    $(".blogEntryForm").hide();
 
   });
 
