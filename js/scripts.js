@@ -147,9 +147,6 @@ $(document).ready(function(){
     console.log(XentryClassStr);
     console.log(entryClassStr);
 
-
-
-
     console.log(user);
     $("#sidebarBlogList").prepend(blogEntry.listItem);
     $(".allBlogEntries").prepend(blogEntry.asString);
@@ -162,9 +159,9 @@ $(document).ready(function(){
       $(this).val("");
     });
   });
-  $("div#sidebarBlogEntries div#scrollingLinks ul#sidebarBlogList li span." + XblogEntry0 + " img").click(function(){
-    console.log(blogEntry);
-    $(entryClassStr).hide();
-  });
+  // $("div#sidebarBlogEntries div#scrollingLinks ul#sidebarBlogList li span." + XblogEntry0 + " img").click(function(){
+  //   console.log(blogEntry);
+  //   $(entryClassStr).hide();
+  // });
 
 });
