@@ -205,6 +205,7 @@ $(document).ready(function(){
         $(sidebarListItemClassStr).hide();
         $(entryClassStr).hide();
     });
+    
     $("#samplePostIcon").click(function(){
         $("#samplePost").hide();
         $("#samplePostIcon").hide();
