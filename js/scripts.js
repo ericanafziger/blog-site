@@ -66,6 +66,7 @@ var addTags = function(tags) {
 
 //frontend logic
 $(document).ready(function(){
+
   //character counter for profile bio
   var text_max = 250;
   $('#count_message').html(text_max + ' remaining');
