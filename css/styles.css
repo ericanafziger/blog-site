@@ -1,42 +1,12 @@
-a, .blogTagID {
-  color: #272C2B;
-  text-decoration: underline;
-}
-a:hover, .blogTagID:hover {
-  color: #0E6251;
-}
-
-.blogEntryContent {
-  height: 150px;
-  resize: block;
-  overflow: scroll;
-}
-
-.bio {
-  height:
-}
-
-.blogTagID {
-  cursor: pointer;
-}
-
-#landingPage {
-  display: none;
-}
-
-#newBlogEntry {
-  display: none;
-}
-/*#mainblog {
-  display: none;
-}*/
-
-/*.allBlogEntries {
-  display: none;
-}*/
-
 body {
   background: url(../img/white-background1.jpg);
+  font-family: 'Tinos', serif;
+}
+.floatLeft {
+  float: left;
+}
+.highlight {
+  color: #0E6251;
 }
 #siteName{
   font-size: 3em;
@@ -47,16 +17,6 @@ body {
   text-align: center;
   margin-bottom: 5%;
 }
-.floatLeft {
-  float: left;
-}
-.highlight {
-  color: #0E6251;
-}
-
-#mainblog h1 {
-  margin:  0 0 40px 0;
-}
 
 #userRegister, #mainblog {
   background:rgba(255,255,255, 0.7);
@@ -66,6 +26,8 @@ body {
   font-size: 4em;
   font-weight: 300;
   text-align: center;
+  font-family: 'Prata', serif;
+
 }
 #userRegister input, #userRegister textarea {
   width: 90%;
@@ -88,29 +50,112 @@ body {
   background: #0B4C40;
   color: white;
 }
+/*////////////////////////////////// landingPage stying ////////////////////////////////*/
+/*#landingPage {
+  display: none;
+}*/
+/*////////////////////////////////// newBlogEntry stying ////////////////////////////////*/
 
-/* Sidebar styling */
+#newBlogEntry {
+  display: none;
+}
+/*////////////////////////////////// mainblog stying ////////////////////////////////*/
 
-#userSidebar {
-  background: rgba(14, 98, 81, 0.2);
-  height: 400px;
+#mainblog {
+  display: none;
+}
+#mainblog h1 {
+  margin:  0 0 40px 0;
+}
+.blogTitleDiv {
+  width: 100%;
+  border-bottom: 1px solid black;
+  margin-bottom: 5%;
+}
+.allBlogEntries {
   overflow: auto;
-  margin: 25px 0 0 0;
-  border-radius: 10px
+  height: 700px;
+  /*display: none;*/
+}
+a {
+  color: white;
+  text-decoration: underline;
+  letter-spacing: 0.05em;
+}
+a:hover {
+  color:
+}
+.blogTagID {
+  color: #272C2B;
+  text-decoration: underline;
+}
+.blogTagID:hover {
+  color: #0E6251;
 }
 
-.avatarImg img {
-  border-radius: 50%;
-  border: 1px solid;
+.blogEntryContent {
+  height: 150px;
+  resize: block;
+  overflow: scroll;
 }
 
+.blogTagID {
+  cursor: pointer;
+}
 .allBlogEntries img {
 
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 200px;
-  width: 200px;
-  border-radius: 10px;
+  width: 100%;
+}
+
+/*////////////////////////////////// sidebar stying ////////////////////////////////*/
+
+#userSidebar {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2%;
+  height: 700px;
+  /*overflow: auto;*/
+  color: white;
+}
+#userSidebar h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+#scrollingLinks {
+  overflow: auto;
+  height: 100px;
+}
+#createDeleteButtons {
+  margin-top: 30%;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#createDeleteButtons button {
+  border-radius: 0%;
+  margin: 2%;
+  width: 40%;
+}
+
+.avatarImg img {
+  border-radius: 50%;
+  margin-bottom: 7%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid;
+}
+.limitBioHeight {
+  height: 150px;
+  overflow: auto;
+}
+.center {
+  text-align: center;
+}
+.bottom-border {
+  border-bottom: 1px solid white;
+  padding-bottom: 5%;
 }
