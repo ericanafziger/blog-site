@@ -108,7 +108,7 @@ BlogEntry.prototype={
                       '<br>' + this.tagsAsStr + '<br><br></div>' + '--------------------------HR---------------------------- <br><br></div>';
   },
   toListItem: function() {
-    this.listItem = '<li id = "sidebarListItem'+ this.entryClass + '"><a href="#' + this.entryClass + '">' +  this.entryTitle + '</a><div id= "X' + this.entryClass + '" class="xIcon"><img src="img/redX.png" alt= "X"></div></li>';
+    this.listItem = '<li id = "sidebarListItem'+ this.entryClass + '"><a href="#' + this.entryClass + '">' +  this.entryTitle + '</a><span id= "X' + this.entryClass + '" class="xIcon"><img src="img/redX.png" alt= "X"></span></li>';
   }
 
 };
@@ -200,10 +200,14 @@ $(document).ready(function(){
     user.blogEntries.push(blogEntry);
     $("#sidebarBlogList").prepend(blogEntry.listItem);
     $(".allBlogEntries").prepend(blogEntry.asString);
+
     $(XentryClassStr).click(function(){
         $(sidebarListItemClassStr).hide();
         $(entryClassStr).hide();
-        $(".xIcon img").hide();
+    });
+    $("#samplePostIcon").click(function(){
+        $("#samplePost").hide();
+        $("#samplePostIcon").hide();
     });
 
     $(".allBlogEntries").show();
