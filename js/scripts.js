@@ -25,13 +25,15 @@ var User = function(bio, blogEntries, blogTitle){
   this.blogTitle = blogTitle;
 };
 
-var BlogEntry = function(entryTitle, photos, entryText, entryTags, blogAsString) {
+var BlogEntry = function(entryTitle, photos, entryText, entryTags, blogAsString, tagsAsStr, listItem, entryClass) {
   this.entryTitle = entryTitle;
   this.photos = photos;
   this.entryText = entryText;
   this.entryTags = [];
   this.asString = blogAsString;
   this.tagsAsStr = "";
+  this.listItem = listItem;
+  this.entryClass = entryClass;
 };
 
 BlogEntry.prototype={
@@ -51,7 +53,10 @@ BlogEntry.prototype={
 
   toString: function(idNum){
 
-    this.asString = '<div id="blogEntry' + idNum + '"><h3>' + this.entryTitle + '</h3><br><br><img src = "' + this.photos + '" alt = "blog' + idNum + ' photo"><br><br><p>' + this.entryText + '</p><br>' + this.tagsAsStr + '<br><br>' + '--------------------------HR----------------------------' + '<br><br>';
+    this.asString = '<div class="blogEntry' + idNum + '"><h3>' + this.entryTitle + '</h3><br><br><img src = "' + this.photos + '" alt = "blog' + idNum + ' photo"><br><br><p>' + this.entryText + '</p><br>' + this.tagsAsStr + '<br><br>' + '--------------------------HR---------------------------- <br><br></div>';
+  },
+  toListItem: function() {
+    this.listItem = '<li><a href="' + this.entryClass + '">' +  this.entryTitle + '</a><span class= "X' + this.entryClass + ' xIcon"><img src="img/redX.png" alt= "X"></span></li>';
   }
 
 };
@@ -61,17 +66,29 @@ var addTags = function(tags) {
 
 //frontend logic
 $(document).ready(function(){
+  //character counter for profile bio
+  var text_max = 250;
+  $('#count_message').html(text_max + ' remaining');
+  $('#text').keyup(function() {
+    var text_length = $('#text').val().length;
+    var text_remaining = text_max - text_length;
+
+    $('#count_message').html(text_remaining + ' remaining');
+  });
+
   var user = new User();
 
+  //add info to sidebar
   var showSidebarInput = function(){
     $(".userName").text(user.bio.userName);
     $(".avatarImg").html(user.bio.avatarPhoto);
     $(".fullName").text(user.bio.fullName);
     $(".location").text(user.bio.city + ", " + user.bio.state);
     $(".bio").text(user.bio.bioText);
-    // $("#sidebarBlogList").prepend();
   };
 
+
+  //initial submit that gathers main info about user
   $("#userRegister").submit(function(event){
     event.preventDefault();
     user.bio.nameArr[0] = $(".first-name").val();
@@ -91,11 +108,20 @@ $(document).ready(function(){
     console.log(user);
   });
 
+  //adds another input box for another tag
   $("#add-blogTag").click(function() {
     $(".justTags").append('<input type="text" class="form-control blogEntryTags">' +
                              '<br>');
   });
 
+  //makes new entry form appear
+  $("#newEntryButton").click(function() {
+    $("#landingPage").hide();
+    $(".allBlogEntries").hide();
+    $("#newBlogEntry").show();
+  });
+
+  //submit for new blog entry
   $(".blogEntryForm").submit(function(event){
     event.preventDefault();
     var entryTitle = $(".blogEntryTitle").val();
@@ -103,18 +129,41 @@ $(document).ready(function(){
     var entryText = $(".blogEntryContent").val();
     var blogEntry = new BlogEntry(entryTitle, photos, entryText);
 
+    //runs through each tag for current blog entry and adds them to the object blogEntry
     $(".blogEntryTags").each(function() {
       var entryTag = $(this).val();
       blogEntry.entryTags.push(entryTag);
     });
+
     blogEntry.getEntryTags();
-    blogEntry.toString(user.blogEntries.length-1);
+    blogEntry.toString(user.blogEntries.length);
 
+    blogEntry.entryClass = "blogEntry" + user.blogEntries.length;
+    var XentryClassStr = '".X' + blogEntry.entryClass + ' img"';
+    var entryClassStr = '".' + blogEntry.entryClass + '"';
+    blogEntry.toListItem();
     user.blogEntries.push(blogEntry);
-    console.log(user);
-    $(".allBlogEntries").prepend(blogEntry.asString);
-    $(".blogEntryForm").hide();
+    console.log(XentryClassStr);
+    console.log(entryClassStr);
 
+
+
+
+    console.log(user);
+    $("#sidebarBlogList").prepend(blogEntry.listItem);
+    $(".allBlogEntries").prepend(blogEntry.asString);
+    $(".allBlogEntries").show();
+    $("#newBlogEntry").hide();
+    $(".blogEntryTitle").val("");
+    $(".blogEntryImage").val("");
+    $(".blogEntryContent").val("");
+    $(".blogEntryTags").each(function() {
+      $(this).val("");
+    });
+  });
+  $("div#sidebarBlogEntries div#scrollingLinks ul#sidebarBlogList li span." + XblogEntry0 + " img").click(function(){
+    console.log(blogEntry);
+    $(entryClassStr).hide();
   });
 
 });
