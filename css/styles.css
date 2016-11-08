@@ -16,7 +16,7 @@ body {
   padding-top: 50px;
   position: relative;
   z-index: -2;
-  margin-left: 10%
+  margin-left: 0% /* pushes siteName farther to the right */
 }
 
 #siteName h1 {
@@ -30,13 +30,14 @@ body {
   float: left;
   height: 450px;
   margin-top: 30px;
-  margin-left: 15%;
+  margin-left: 10%; /* pushes title image farther to the right*/
   position: absolute;
   z-index: -1;
 }
 
 #userRegister, #mainblog {
-  background:rgba(255,255,255, 0.7);
+  width: 100%;
+  background:rgba(255,255,255, 0.7); /*changes background color*/
   padding: 5%;
 }
 #userRegister h1, #mainblog h1 {
