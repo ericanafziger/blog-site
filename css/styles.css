@@ -1,43 +1,4 @@
-<<<<<<< HEAD
-a, .blogTagID {
-  color: #272C2B;
-  text-decoration: underline;
-}
-a:hover, .blogTagID:hover {
-  color: #0E6251;
-}
 
-.blogEntryContent {
-  height: 150px;
-  resize: block;
-  overflow: scroll;
-}
-
-.bio {
-  height:
-}
-
-.blogTagID {
-  cursor: pointer;
-}
-
-#landingPage {
-  display: none;
-}
-
-/*#newBlogEntry {
-  display: none;
-}*/
-/*#mainblog {
-  display: none;
-}*/
-
-/*.allBlogEntries {
-  display: none;
-}*/
-
-=======
->>>>>>> css-light-theme
 body {
   background: url(../img/white-background1.jpg);
   font-family: 'Tinos', serif;
