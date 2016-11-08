@@ -51,12 +51,12 @@ BlogEntry.prototype={
     };
   },
 
-  toString: function(idNum){
+  toString: function(){
 
-    this.asString = '<div class="blogEntry' + idNum + '"><h3>' + this.entryTitle + '</h3><br><br><img src = "' + this.photos + '" alt = "blog' + idNum + ' photo"><br><br><p>' + this.entryText + '</p><br>' + this.tagsAsStr + '<br><br>' + '--------------------------HR---------------------------- <br><br></div>';
+    this.asString = '<div id="' + this.entryClass + '"><h3>' + this.entryTitle + '</h3><br><br><img src = "' + this.photos + '" alt = "' + this.entryClass + ' photo"><br><br><p>' + this.entryText + '</p><br>' + this.tagsAsStr + '<br><br>' + '--------------------------HR---------------------------- <br><br></div>';
   },
   toListItem: function() {
-    this.listItem = '<li><a href="' + this.entryClass + '">' +  this.entryTitle + '</a><span class= "X' + this.entryClass + ' xIcon"><img src="img/redX.png" alt= "X"></span></li>';
+    this.listItem = '<li id = "sidebarListItem'+ this.entryClass + '"><a href="#' + this.entryClass + '">' +  this.entryTitle + '</a><div id= "X' + this.entryClass + '" class="xIcon"><img src="img/redX.png" alt= "X"></div></li>';
   }
 
 };
@@ -137,19 +137,25 @@ $(document).ready(function(){
     });
 
     blogEntry.getEntryTags();
-    blogEntry.toString(user.blogEntries.length);
-
     blogEntry.entryClass = "blogEntry" + user.blogEntries.length;
-    var XentryClassStr = '".X' + blogEntry.entryClass + ' img"';
-    var entryClassStr = '".' + blogEntry.entryClass + '"';
+    blogEntry.toString();
+
+
+    var XentryClassStr = '#X' + blogEntry.entryClass + ' img';
+    var entryClassStr = '#' + blogEntry.entryClass;
+    var sidebarListItemClassStr = '#sidebarListItem' + blogEntry.entryClass;
     blogEntry.toListItem();
     user.blogEntries.push(blogEntry);
     console.log(XentryClassStr);
     console.log(entryClassStr);
-
     console.log(user);
     $("#sidebarBlogList").prepend(blogEntry.listItem);
-    $(".allBlogEntries").prepend(blogEntry.asString);
+    $(".allBlogEntries").prepend(blogEntry.asString); $(XentryClassStr).click(function(){
+        console.log(entryClassStr);
+        $(sidebarListItemClassStr).hide();
+        $(entryClassStr).hide();
+    });
+
     $(".allBlogEntries").show();
     $("#newBlogEntry").hide();
     $(".blogEntryTitle").val("");
@@ -159,9 +165,4 @@ $(document).ready(function(){
       $(this).val("");
     });
   });
-  // $("div#sidebarBlogEntries div#scrollingLinks ul#sidebarBlogList li span." + XblogEntry0 + " img").click(function(){
-  //   console.log(blogEntry);
-  //   $(entryClassStr).hide();
-  // });
-
-});
+  });
