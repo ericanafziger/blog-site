@@ -10,13 +10,12 @@ body {
 }
 #siteName{
   height: 220px;
-  width: 100%;
   background-color: black;
   margin-top: 125px;
   padding-top: 50px;
   position: relative;
   z-index: -2;
-  margin-left: 0% /* pushes siteName farther to the right */
+  margin-left: 1%; /* pushes siteName farther to the right */
 }
 
 #siteName h1 {
@@ -28,10 +27,11 @@ body {
 
 #titleImage {
   float: left;
-  height: 450px;
   margin-top: 30px;
   margin-left: 10%; /* pushes title image farther to the right*/
+  /*margin-bottom: 400px;*/
   position: absolute;
+  max-width: 90%;
   z-index: -1;
 }
 
@@ -88,11 +88,10 @@ body {
    border-color: #0B4C40;
  }
 
-
 /*////////////////////////////////// landingPage stying ////////////////////////////////*/
-/*#landingPage {
-  z-index: 1;
-}*/
+#landingPage, #mainblog {
+  margin-top: 30%;
+}
 /*////////////////////////////////// newBlogEntry stying ////////////////////////////////*/
 
 #newBlogEntry {
