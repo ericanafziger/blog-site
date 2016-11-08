@@ -148,6 +148,12 @@ a:hover {
   width: 100%;
 }
 
+.allBlogEntries iframe {
+display: block;
+margin: 0 auto;
+margin: 0 auto;
+}
+
 .centerVid {
   display: block;
   margin-left: auto;
@@ -173,7 +179,7 @@ a:hover {
   height: 100px;
 }
 #createDeleteButtons {
-  margin-top: 30%;
+  margin-top: 5%;
   display: block;
   text-align: center;
   margin-left: auto;
@@ -198,6 +204,7 @@ a:hover {
 }
 .limitBioHeight {
   height: 150px;
+  max-width: 100%;
   overflow: auto;
 }
 .center {
@@ -206,4 +213,15 @@ a:hover {
 .bottom-border {
   border-bottom: 1px solid white;
   padding-bottom: 5%;
+}
+.xIcon img{
+  width: 10px;
+  margin-left: 2%;
+  display: none;
+}
+
+.timeCodes {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
 }

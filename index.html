@@ -80,6 +80,10 @@
                   <input type="text" class="form-control blogEntryImage">
                 </div>
                 <div class="form-group">
+                  <label for="blogEntryVid">Upload Video (Enter embed link of a video you want to upload. Hint: Studio recordings from major record labels may be restricted.)</label>
+                  <input type="text" class="form-control blogEntryImage">
+                </div>
+                <div class="form-group">
                   <label for="blogEntryContent">Blog Entry</label>
                   <textarea class="form-control blogEntryContent" rows="10"></textarea>
                 </div>
@@ -87,6 +91,7 @@
                 <div class="form-group justTags">
                   <label for="blogEntryTags">Blog Entry Tags</label>
                   <input type="text" class="form-control blogEntryTags">
+                  <br>
                 </div>
                 <span class="btn btn-primary" id="add-blogTag">Add Another Tag</span>
                 <button type="submit" class="btn" id="submitBlogEntry">Create post</button>
@@ -96,19 +101,17 @@
             <div class="allBlogEntries">
               <div id="samplePost">
                 <h2><span class="postTitle">Sample Post</span></h2>
-                <h5><span class="date">November 8, 2016 10:15 AM</span></h5>
-                <span class="postImage"><img src="img/forest-clouds.jpg" alt="blog three Photo" /></span>
-                <br>
-                <iframe width="560" height="315" src="https://youtu.be/eMxlItGR3jw?t=45s" frameborder="0" allowfullscreen></iframe>
-                <br>
-                <span class="timeCodes">0:45 - 1:00</span>
-                <br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/a5_QV97eYqM" frameborder="0" allowfullscreen></iframe>
-                <br>
-                <span class="timeCodes">2:12 - 2:22</span>
+                <h5><span class="date">November 8, 2016 10:15 am</span></h5>
                 <span class="postBodyCopy">
-                  <p>These tracks share similar percussion and use of the vocal "ohs".</p>
+                  <p>These tracks share similar percussion and use of the vocal "ohs". Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </span>
+                <span class="postImage">
+                </span>
+                <br>
+                <span class="postVideo"><iframe width="560" height="315" src="https://www.youtube.com/embed/hYKpVWp4Hcc" frameborder="0" allowfullscreen></iframe></span>
+                <p class="center">Start and end time: <span class="timeCodes">0:45 - 1:00</span></p>
+                <span class="postVideo"><iframe width="560" height="315" src="https://www.youtube.com/embed/a5_QV97eYqM" frameborder="0" allowfullscreen></iframe></span>
+                <p class="center">Start and end time: <span class="timeCodes">2:12 - 2:22</span></p>
                 <br>
                 <div class="blogTags">
                   <span class="blogTagID">#waterfall</span>, <span class="blogTagID">#nature</span>, <span class="blogTagID">#sunlight</span>, <span class="blogTagID">#forest</span>
