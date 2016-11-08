@@ -1,4 +1,45 @@
 //backend logic
+function time (){
+  function getWeekDay(date) {
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+    return days[date]
+  }
+  function getMonth(month) {
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+    return months[month]
+  }
+
+  var convertHourMinutes = function(h, m){
+  if (h >= 12) {
+    m = m<10?"0"+m:m;
+    h = currentHour-12;
+    m = m<10?"0"+m:m;
+    return h + ":" + m + " PM";
+  } else if (h === 0) {
+    h = 12;
+    m = m<10?"0"+m:m;
+    return h + ":" + m + " AM"
+  } else if (h < 12) {
+    m = m<10?"0"+m:m;
+    return h + ":" + m + " AM"
+  }
+
+  };
+
+  var currentYear = new Date(Date.now()).getFullYear();
+  var currentDayDate = new Date(Date.now()).getDate();
+  var currentDay = new Date(Date.now()).getDay();
+  var weekDay = getWeekDay(currentDay);
+  var currentHour = new Date(Date.now()).getHours();
+  var currentMinute = new Date(Date.now()).getMinutes();
+  var currentMonth = new Date(Date.now()).getMonth();
+  var monthWord = getMonth(currentMonth);
+  var convertedHour = convertHourMinutes(currentHour, currentMinute);
+
+  var currentTime = weekDay + ", " + monthWord + " " + currentDayDate + ", " + currentYear + " at " + convertedHour
+  return currentTime;
+ }
+
 var Bio = function (avatarURL, avatarPhoto, fullName, nameArr, bioText, userName, city, state){
   this.avatarURL = avatarURL;
   this.avatarPhoto = avatarPhoto;
@@ -53,7 +94,18 @@ BlogEntry.prototype={
 
   toString: function(){
 
-    this.asString = '<div id="' + this.entryClass + '"><h3>' + this.entryTitle + '</h3><br><br><img src = "' + this.photos + '" alt = "' + this.entryClass + ' photo"><br><br><p>' + this.entryText + '</p><br>' + this.tagsAsStr + '<br><br>' + '--------------------------HR---------------------------- <br><br></div>';
+    this.asString = '<div id="' + this.entryClass + '">' +
+                      '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                      '<h5><span class="date"></span></h5>' +
+                      '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                      '<span class="postImage"><img src = "' + this.photos + '" alt = "' + this.entryClass + ' photo"></span>'+
+                      '<br>' +
+                      '<span class="postVideo"><iframe width="560" height="315" src="https://www.youtube.com/embed/hYKpVWp4Hcc" frameborder="0" allowfullscreen></iframe></span>' +
+                      '<p class="center">Start and end time: <span class="timeCodes">0:45 - 1:00</span></p>' +
+                      '<span class="postVideo"><iframe width="560" height="315" src="https://www.youtube.com/embed/a5_QV97eYqM" frameborder="0" allowfullscreen></iframe></span>' +
+                      '<p class="center">Start and end time: <span class="timeCodes">2:12 - 2:22</span></p>' +
+                      '<div class="blogTags">'
+                      '<br>' + this.tagsAsStr + '<br><br></div>' + '--------------------------HR---------------------------- <br><br></div>';
   },
   toListItem: function() {
     this.listItem = '<li id = "sidebarListItem'+ this.entryClass + '"><a href="#' + this.entryClass + '">' +  this.entryTitle + '</a><div id= "X' + this.entryClass + '" class="xIcon"><img src="img/redX.png" alt= "X"></div></li>';
@@ -146,14 +198,12 @@ $(document).ready(function(){
     var sidebarListItemClassStr = '#sidebarListItem' + blogEntry.entryClass;
     blogEntry.toListItem();
     user.blogEntries.push(blogEntry);
-    console.log(XentryClassStr);
-    console.log(entryClassStr);
-    console.log(user);
     $("#sidebarBlogList").prepend(blogEntry.listItem);
-    $(".allBlogEntries").prepend(blogEntry.asString); $(XentryClassStr).click(function(){
-        console.log(entryClassStr);
+    $(".allBlogEntries").prepend(blogEntry.asString);
+    $(XentryClassStr).click(function(){
         $(sidebarListItemClassStr).hide();
         $(entryClassStr).hide();
+        $(".xIcon img").hide();
     });
 
     $(".allBlogEntries").show();
@@ -165,4 +215,7 @@ $(document).ready(function(){
       $(this).val("");
     });
   });
+  $("#deleteEntryButton").click(function(){
+    $(".xIcon img").show();
   });
+});
