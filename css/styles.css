@@ -197,6 +197,10 @@ margin-right: auto;
   margin-top: 5%;
 }
 
+.tagSearchResult {
+  display: none;
+}
+
 /*////////////////////////////////// sidebar stying ////////////////////////////////*/
 
 #userSidebar {

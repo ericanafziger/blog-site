@@ -64,6 +64,7 @@ var User = function(bio, blogEntries, blogTitle){
   this.bio = new Bio();
   this.blogEntries = [];
   this.blogTitle = blogTitle;
+  this.selectedEntries = [];
 };
 
 var Video = function(link, start, end){
@@ -93,10 +94,10 @@ BlogEntry.prototype={
 
     for (i=0; i<this.entryTags.length; i++){
       if(i===this.entryTags.length-1){
-      this.tagsAsStr += "<span class='blogTagID'>" + this.entryTags[i] + "</span>";
+      this.tagsAsStr += '<span class="blogTagID ' + this.entryTags[i] + '">#' + this.entryTags[i] + '</span>';
       }
       else {
-      this.tagsAsStr += "<span class='blogTagID'>" + this.entryTags[i] + "</span>" + ", ";
+      this.tagsAsStr += '<span class="blogTagID ' + this.entryTags[i] + '">#' + this.entryTags[i] + '</span>' + ', ';
       };
     };
   },
@@ -261,13 +262,15 @@ $(document).ready(function(){
     var video = $(".playerid").attr("src");
     $(".playerid").attr("src","");
     $(".playerid").attr("src",video);
-    $(".justTags").html('<label for="blogEntryTags">Blog Entry Tags</label><input type="text" class="form-control blogEntryTags" placeholder="#yourTag"> <br>');
+
+    $(".justTags").html('<label for="blogEntryTags">Blog Entry Tags</label><input type="text" class="form-control blogEntryTags" placeholder="yourtag"> <br>');
+
     $("#landingPage").hide();
     $(".allBlogEntries").hide();
     $("#newBlogEntry").show();
   });
 
-  $("#returnButton").click(function(){
+  $(".returnButton").click(function(){
     $("#newBlogEntry").fadeOut();
     $(".allBlogEntries").delay(700).fadeIn();
   });
@@ -292,6 +295,7 @@ $(document).ready(function(){
     //runs through each tag for current blog entry and adds them to the object blogEntry
     $(".blogEntryTags").each(function() {
       var entryTag = $(this).val();
+
       blogEntry.entryTags.push(entryTag);
     });
 
@@ -334,7 +338,26 @@ $(document).ready(function(){
     $(".blogEntryTags").each(function() {
       $(this).val("");
     });
-  });
+
+    $(".blogTagID").click(function(){
+      var tagClasses = $(this).attr('class').split(' ');
+      for(var i = 0; i < user.blogEntries.length; i++){
+        for(var j = 0; j < user.blogEntries[i].entryTags.length; j++){
+          if(tagClasses[1] === user.blogEntries[i].entryTags[j]){
+            user.selectedEntries.push(user.blogEntries[i]);
+          }
+        }
+      }
+
+      for(var i = 0; i < user.selectedEntries.length; i++){
+        $(".printTagSearch").prepend(user.selectedEntries[i].asString);
+      }
+      $(".allBlogEntries").hide();
+      $(".tagSearchResult").show();
+      user.selectedEntries = [];
+    });
+});
+
   $("#deleteEntryButton").click(function(){
     $(".xIcon img").show();
     $("#doneEntryButton").show();

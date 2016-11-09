@@ -118,14 +118,14 @@
           <!-- Tag entry field that can add additional tags appended with javascript -->
                 <div class="form-group justTags">
                   <label for="blogEntryTags">Blog Entry Tags</label>
-                  <input type="text" class="form-control blogEntryTags" placeholder="#yourTag">
+                  <input type="text" class="form-control blogEntryTags" placeholder="yourtag">
                   <br>
                 </div>
                 <span class="btn btn-primary" id="add-blogTag">Add Another Tag</span>
 
                 <div class="createBlogButtons">
                   <button type="submit" id="submitBlogEntry" class="btn btn-default">Create post</button>
-                  <button type="button" id="returnButton" class="btn btn-danger">Return to blog</button>
+                  <button type="button" class="returnButton btn btn-danger">Return to blog</button>
                 </div>
               </form>
             </div><!--end of newBlogEntry-->
@@ -162,12 +162,22 @@
                 <p class="center">Start and end time: <span class="timeCodes">2:12 - 2:22</span></p>
                 <br>
                 <div class="blogTags">
-                  <span class="blogTagID">#Robin Thicke</span>, <span class="blogTagID">#Marbin Gaye</span>, <span class="blogTagID">#Blurred Lines</span>
+
+                  <span class="blogTagID">#Robin Thicke</span>,
+                  <span class="blogTagID">#Marbin Gaye</span>,
+                  <span class="blogTagID">#Blurred Lines</span>
                   <br>
                   <br>
                 </div>
               </div>
             </div><!--end of all blog entries-->
+            <div class = "tagSearchResult">
+              <h4>Search Results</h4>
+              <div class="printTagSearch">
+
+              </div>
+              <button type="button" class="returnButton btn btn-danger">Return to blog</button>
+            </div> <!-- end of tag search results -->
           </div><!--end of 1st column-->
     <!-- Sidebar that holds user info -->
           <div class="col-xs-3" id="userSidebar">
