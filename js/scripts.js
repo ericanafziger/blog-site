@@ -201,6 +201,9 @@ var addTags = function(tags) {
 $(document).ready(function(){
 
   $("#goToRegister").click(function(){
+    var video = $(".playerid").attr("src");
+    $(".playerid").attr("src","");
+    $(".playerid").attr("src",video);
     $("#aboutPage").fadeOut();
     $("#landingPage").delay(700).fadeIn(1000);
   })
@@ -255,6 +258,9 @@ $(document).ready(function(){
 
   //makes new entry form appear
   $("#newEntryButton").click(function() {
+    var video = $(".playerid").attr("src");
+    $(".playerid").attr("src","");
+    $(".playerid").attr("src",video);
     $(".justTags").html('<label for="blogEntryTags">Blog Entry Tags</label><input type="text" class="form-control blogEntryTags" placeholder="#yourTag"> <br>');
     $("#landingPage").hide();
     $(".allBlogEntries").hide();
