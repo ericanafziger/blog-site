@@ -99,6 +99,9 @@ body {
 
 #newBlogEntry {
   display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 700px;
 }
 .clickable {
   color: #272C2B;
@@ -123,6 +126,7 @@ body {
 .allBlogEntries {
   overflow: auto;
   height: 700px;
+  padding-right: 5%;
   /*display: none;*/
 }
 a {
@@ -147,6 +151,10 @@ a:hover {
   overflow: scroll;
 }
 
+.blogEntryForm {
+  padding-right: 5%;
+}
+
 .blogTagID {
   cursor: pointer;
 }
@@ -160,8 +168,8 @@ a:hover {
 
 .allBlogEntries iframe {
 display: block;
-margin: 0 auto;
-margin: 0 auto;
+margin-left: auto;
+margin-right: auto;
 }
 
 .centerVid {
@@ -169,6 +177,14 @@ margin: 0 auto;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
+}
+
+.postImage img {
+  margin-bottom: 5%;
+}
+
+.postVideo {
+  margin-top: 5%;
 }
 
 /*////////////////////////////////// sidebar stying ////////////////////////////////*/

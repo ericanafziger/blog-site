@@ -103,17 +103,91 @@ BlogEntry.prototype={
   },
 
   toString: function(){
-
+    if (this.photos !== "" && this.video.start !== "" && this.video.end !== "") {
     this.asString = '<div id="' + this.entryClass + '">' +
                       '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
                       '<h5><span class="date">' + this.time + '</span></h5>' +
                       '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                      '<span class="postImage"><img src = "' + this.photos + '" alt = "' + this.entryClass + ' photo"></span>'+
+                      '<span class="postImage"><img src = "' + this.photos + '</span>'+
                       '<br>' +
                       '<span class="postVideo">' + this.video.link + '</span>' +
                       '<p class="center">Start and end time: <span class="timeCodes">' + this.video.start + ' - ' + this.video.end + '</span></p>' +
                       '<div class="blogTags">' +
-                      '<br>' + this.tagsAsStr + '<br><br></div>' + '--------------------------HR---------------------------- <br><br></div>';
+                      '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.photos === "" && this.video.start === "" && this.video.end === "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.photos === "" && this.video.start !== "" && this.video.end !== "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<p class="center">Start and end time: <span class="timeCodes">' + this.video.start + ' - ' + this.video.end + '</span></p>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.photos === "" && this.video.start !== "" && this.video.end === "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<p class="center">Start time: <span class="timeCodes">' + this.video.start +
+                        '</span></p>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.photos === "" && this.video.start === "" && this.video.end !== "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<p class="center">End time: <span class="timeCodes">' + this.video.end +
+                        '</span></p>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.video.start === "" && this.video.end === "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<span class="postImage"><img src = "' + this.photos + '</span>'+
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.video.start !== "" && this.video.end === "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<span class="postImage"><img src = "' + this.photos + '</span>'+
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<p class="center">Start time: <span class="timeCodes">' + this.video.start + '</span></p>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.video.end !== "" && this.video.start === "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<span class="postImage"><img src = "' + this.photos + '</span>'+
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<p class="center">End time: <span class="timeCodes">' + this.video.end + '</span></p>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    }
   },
   toListItem: function() {
     this.listItem = '<li id = "sidebarListItem'+ this.entryClass + '"><a href="#' + this.entryClass + '">' +  this.entryTitle + '</a><span id= "X' + this.entryClass + '" class="xIcon"><img src="img/redX.png" alt= "X"></span></li>';
@@ -162,9 +236,9 @@ $(document).ready(function(){
     user.bio.state = $(".state").val();
     user.bio.getFullName();
     user.bio.addImgTag();
-    $("#landingPage").hide();
-    $("#mainblog").show();
-    $("#userSidebar").show();
+    $("#landingPage").hide("slide", { direction: "left" }, 1000);
+    $("#mainblog").delay(1000).fadeIn(1000);
+    $("#userSidebar").delay(1000).fadeIn(1000);
     showSidebarInput();
     console.log(user);
   });
@@ -177,9 +251,19 @@ $(document).ready(function(){
 
   //makes new entry form appear
   $("#newEntryButton").click(function() {
+    $(".justTags").html('<label for="blogEntryTags">Blog Entry Tags</label><input type="text" class="form-control blogEntryTags" placeholder="#yourTag"> <br>');
     $("#landingPage").hide();
     $(".allBlogEntries").hide();
     $("#newBlogEntry").show();
+  });
+
+  $("#returnButton").click(function(){
+    $("#newBlogEntry").fadeOut();
+    $(".allBlogEntries").delay(700).fadeIn();
+  });
+
+  $(".clickable").click(function(){
+    alert('1. Go to http://www.youtube.com \n2. Search and open your desired video \n3. Below the video, click the share button (look for the right-pointing arrow) \n4. Click the embed button that appears. \n5. Copy the embed URL to be pasted into your blog form.');
   });
 
   //submit for new blog entry
@@ -225,8 +309,8 @@ $(document).ready(function(){
         $("#samplePostListItem").hide();
     });
 
-    $(".allBlogEntries").show();
-    $("#newBlogEntry").hide();
+    $(".allBlogEntries").delay(700).fadeIn();
+    $("#newBlogEntry").fadeOut();
     $(".blogEntryTitle").val("");
     $(".blogEntryImage").val("");
     $(".blogEntryContent").val("");
