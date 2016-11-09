@@ -348,7 +348,7 @@ $(document).ready(function(){
       $(".tagSearchResult").show();
       user.selectedEntries = [];
     });
-});
+  });
 
   $("#deleteEntryButton").click(function(){
     $(".xIcon img").show();
