@@ -181,6 +181,15 @@ $(document).ready(function(){
     $("#newBlogEntry").show();
   });
 
+  $("#returnButton").click(function(){
+    $("#newBlogEntry").hide();
+    $(".allBlogEntries").show();
+  });
+
+  $(".clickable").click(function(){
+    alert('1. Go to http://www.youtube.com \n2. Search and open your desired video \n3. Below the video, click the share button (look for the right-pointing arrow) \n4. Click the embed button that appears. \n5. Copy the embed URL to be pasted into your blog form.');
+  });
+
   //submit for new blog entry
   $(".blogEntryForm").submit(function(event){
     event.preventDefault();
