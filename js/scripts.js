@@ -202,9 +202,24 @@ var addTags = function(tags) {
 $(document).ready(function(){
 
   $("#goToRegister").click(function(){
+    var video = $(".playerid").attr("src");
+    $(".playerid").attr("src","");
+    $(".playerid").attr("src",video);
     $("#aboutPage").fadeOut();
     $("#landingPage").delay(700).fadeIn(1000);
   })
+
+
+  $("#samplePostIcon").click(function(){
+      $("#samplePost").hide();
+      $("#samplePostListItem").hide();
+  });
+
+  $("#samplePostIcon1").click(function(){
+      $("#samplePost1").hide();
+      $("#samplePostListItem1").hide();
+  });
+
 
   //character counter for profile bio
   var text_max = 250;
@@ -256,7 +271,12 @@ $(document).ready(function(){
 
   //makes new entry form appear
   $("#newEntryButton").click(function() {
+    var video = $(".playerid").attr("src");
+    $(".playerid").attr("src","");
+    $(".playerid").attr("src",video);
+
     $(".justTags").html('<label for="blogEntryTags">Blog Entry Tags</label><input type="text" class="form-control blogEntryTags" placeholder="yourtag"> <br>');
+
     $("#landingPage").hide();
     $(".allBlogEntries").hide();
     $("#newBlogEntry").show();
@@ -307,16 +327,6 @@ $(document).ready(function(){
     $(XentryClassStr).click(function(){
         $(sidebarListItemClassStr).hide();
         $(entryClassStr).hide();
-    });
-
-    $("#samplePostIcon").click(function(){
-        $("#samplePost").hide();
-        $("#samplePostListItem").hide();
-    });
-
-    $("#samplePostIcon1").click(function(){
-        $("#samplePost1").hide();
-        $("#samplePostListItem1").hide();
     });
 
     $(".allBlogEntries").delay(700).fadeIn();
