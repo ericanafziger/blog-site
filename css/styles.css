@@ -58,17 +58,20 @@ body {
   height: 110px;
 }
 
-#submitProfile, #submitBlogEntry {
+#submitProfile{
   display: block;
   margin: 0 auto;
   margin: 0 auto;
   width: 100px;
   background: rgb(0,0,0);
   color: white;
+  margin-top: 5%;
 }
-#submitProfile:hover, #submitBlogEntry:hover{
+#submitProfile:hover{
   background: #0E6251;
 }
+
+
 .btn-primary {
   background: #0E6251;
 }
@@ -196,6 +199,19 @@ margin: 0 auto;
   border-radius: 0%;
   margin: 2%;
   width: 40%;
+}
+
+.createBlogButtons {
+  margin-top: 5%;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.createBlogButtons button {
+  border-radius: 0%;
+  margin: 2%;
+  width: 20%;
 }
 
 #doneEntryButton {
