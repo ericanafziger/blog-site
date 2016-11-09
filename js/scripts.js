@@ -161,9 +161,9 @@ $(document).ready(function(){
     user.bio.state = $(".state").val();
     user.bio.getFullName();
     user.bio.addImgTag();
-    $("#landingPage").hide();
-    $("#mainblog").show();
-    $("#userSidebar").show();
+    $("#landingPage").hide("slide", { direction: "left" }, 1000);
+    $("#mainblog").delay(1000).fadeIn(1000);
+    $("#userSidebar").delay(1000).fadeIn(1000);
     showSidebarInput();
     console.log(user);
   });
@@ -182,8 +182,8 @@ $(document).ready(function(){
   });
 
   $("#returnButton").click(function(){
-    $("#newBlogEntry").hide();
-    $(".allBlogEntries").show();
+    $("#newBlogEntry").fadeOut();
+    $(".allBlogEntries").delay(700).fadeIn();
   });
 
   $(".clickable").click(function(){

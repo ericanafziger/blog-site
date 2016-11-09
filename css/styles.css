@@ -99,6 +99,9 @@ body {
 
 #newBlogEntry {
   display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 700px;
 }
 .clickable {
   color: #272C2B;
