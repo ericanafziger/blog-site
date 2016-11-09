@@ -303,6 +303,7 @@ $(document).ready(function(){
   $(".returnButton").click(function(){
     $("#newBlogEntry").fadeOut();
     $(".allBlogEntries").delay(700).fadeIn();
+    $(".tagSearchResult").hide();
   });
 
   $(".clickable").click(function(){
@@ -368,6 +369,7 @@ $(document).ready(function(){
           }
         }
       }
+      $(".printTagSearch").text("");
 
       for(var i = 0; i < user.selectedEntries.length; i++){
         $(".printTagSearch").prepend(user.selectedEntries[i].asString);
