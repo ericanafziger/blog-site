@@ -237,5 +237,12 @@ $(document).ready(function(){
   });
   $("#deleteEntryButton").click(function(){
     $(".xIcon img").show();
+    $("#doneEntryButton").show();
+    $("#deleteEntryButton").hide();
+  });
+  $("#doneEntryButton").click(function(){
+    $(".xIcon img").hide();
+    $("#doneEntryButton").hide();
+    $("#deleteEntryButton").show();
   });
 });
