@@ -269,6 +269,24 @@ $(document).ready(function(){
                              '<br>');
   });
 
+  // adds another video input form
+  $("#insertVideoButton").click(function(){
+    $("#insertVideoDiv").append('<div class="form-group">' +
+                                '<label for="blogEntryVid">Upload Another YouTube Video</label>' +
+                                '<input type="text" class="form-control blogEntryVid">' +
+                                '</div>' +
+                                '<div class="row">' +
+                                '<div class="form-group col-md-4">' +
+                                '<label for="vidStartTime">Start time for video playback:</label>' +
+                                '<input type="text" class="form-control vidStartTime" placeholder="0:45">' +
+                                '</div>' +
+                                '<div class="form-group col-md-4">' +
+                                '<label for="vidEndTime">End time for video playback:</label>' +
+                                '<input type="text" class="form-control vidEndTime" placeholder="1:30">' +
+                                '</div>' +
+                                '</div>');
+  });
+
   //makes new entry form appear
   $("#newEntryButton").click(function() {
     var video = $(".playerid").attr("src");
