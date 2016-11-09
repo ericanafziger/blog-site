@@ -105,7 +105,10 @@
                   <br>
                 </div>
                 <span class="btn btn-primary" id="add-blogTag">Add Another Tag</span>
-                <button type="submit" class="btn" id="submitBlogEntry">Create post</button>
+                <div class="alignButtons">
+                  <button type="submit" class="btn" id="submitBlogEntry">Create post</button>
+                  <button type="button" class="btn btn-danger" id="returnButton">Return to blog</button>
+                </div>
               </form>
             </div><!--end of newBlogEntry-->
       <!-- Receptacle where each blog entry will be prepended. -->
@@ -147,12 +150,12 @@
               <h4>List of Entries</h4>
               <div id="scrollingLinks">
                 <ul id="sidebarBlogList">
-                  <li><a href="#samplePost">Sample Post</a><span class="xIcon"><img src="img/redX.png" alt= "X"></span></li>
+                  <li><a href="#samplePost">Sample Post</a><span class="xIcon" id="samplePostIcon"><img src="img/redX.png" alt= "X"></span></li>
                 </ul>
               </div><!--end of scrollingLinks-->
             </div><!--end of sidebarBlogEntries-->
             <br>
-            <div id="createDeleteButtons">
+            <div class="alignButtons">
               <button type="button" id="newEntryButton" class="btn btn-default">Create!</button>
               <button type="button" id="deleteEntryButton" class="btn btn-danger">Delete!</button>
               <button type="button" id="doneEntryButton" class="btn btn-success">Done!</button>
