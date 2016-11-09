@@ -151,6 +151,10 @@ a:hover {
   overflow: scroll;
 }
 
+.blogEntryForm {
+  padding-right: 5%;
+}
+
 .blogTagID {
   cursor: pointer;
 }
