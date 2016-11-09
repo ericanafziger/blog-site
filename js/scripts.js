@@ -102,17 +102,91 @@ BlogEntry.prototype={
   },
 
   toString: function(){
-
+    if (this.photos !== "" && this.video.start !== "" && this.video.end !== "") {
     this.asString = '<div id="' + this.entryClass + '">' +
                       '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
                       '<h5><span class="date">' + this.time + '</span></h5>' +
                       '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                      '<span class="postImage"><img src = "' + this.photos + '" alt = "' + this.entryClass + ' photo"></span>'+
+                      '<span class="postImage"><img src = "' + this.photos + '</span>'+
                       '<br>' +
                       '<span class="postVideo">' + this.video.link + '</span>' +
                       '<p class="center">Start and end time: <span class="timeCodes">' + this.video.start + ' - ' + this.video.end + '</span></p>' +
                       '<div class="blogTags">' +
-                      '<br>' + this.tagsAsStr + '<br><br></div>' + '--------------------------HR---------------------------- <br><br></div>';
+                      '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.photos === "" && this.video.start === "" && this.video.end === "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.photos === "" && this.video.start !== "" && this.video.end !== "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<p class="center">Start and end time: <span class="timeCodes">' + this.video.start + ' - ' + this.video.end + '</span></p>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.photos === "" && this.video.start !== "" && this.video.end === "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<p class="center">Start time: <span class="timeCodes">' + this.video.start +
+                        '</span></p>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.photos === "" && this.video.start === "" && this.video.end !== "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<p class="center">End time: <span class="timeCodes">' + this.video.end +
+                        '</span></p>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.video.start === "" && this.video.end === "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<span class="postImage"><img src = "' + this.photos + '</span>'+
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.video.start !== "" && this.video.end === "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<span class="postImage"><img src = "' + this.photos + '</span>'+
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<p class="center">Start time: <span class="timeCodes">' + this.video.start + '</span></p>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    } else if (this.video.end !== "" && this.video.start === "") {
+      this.asString = '<div id="' + this.entryClass + '">' +
+                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
+                        '<h5><span class="date">' + this.time + '</span></h5>' +
+                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
+                        '<span class="postImage"><img src = "' + this.photos + '</span>'+
+                        '<br>' +
+                        '<span class="postVideo">' + this.video.link + '</span>' +
+                        '<p class="center">End time: <span class="timeCodes">' + this.video.end + '</span></p>' +
+                        '<div class="blogTags">' +
+                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
+    }
   },
   toListItem: function() {
     this.listItem = '<li id = "sidebarListItem'+ this.entryClass + '"><a href="#' + this.entryClass + '">' +  this.entryTitle + '</a><span id= "X' + this.entryClass + '" class="xIcon"><img src="img/redX.png" alt= "X"></span></li>';
@@ -232,8 +306,8 @@ $(document).ready(function(){
         $("#samplePostListItem").hide();
     });
 
-    $(".allBlogEntries").show();
-    $("#newBlogEntry").hide();
+    $(".allBlogEntries").delay(700).fadeIn();
+    $("#newBlogEntry").fadeOut();
     $(".blogEntryTitle").val("");
     $(".blogEntryImage").val("");
     $(".blogEntryContent").val("");
