@@ -228,6 +228,9 @@ $(document).ready(function(){
     $(".blogEntryTitle").val("");
     $(".blogEntryImage").val("");
     $(".blogEntryContent").val("");
+    $(".blogEntryVid").val("");
+    $(".vidStartTime").val("");
+    $(".vidEndTime").val("");
     $(".blogEntryTags").each(function() {
       $(this).val("");
     });
