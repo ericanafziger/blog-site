@@ -108,7 +108,7 @@ BlogEntry.prototype={
                       '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
                       '<h5><span class="date">' + this.time + '</span></h5>' +
                       '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                      '<span class="postImage"><img src = "' + this.photos + '</span>'+
+                      '<span class="postImage"><img src = "' + this.photos + '">' + '</span>'+
                       '<br>' +
                       '<span class="postVideo">' + this.video.link + '</span>' +
                       '<p class="center">Start and end time: <span class="timeCodes">' + this.video.start + ' - ' + this.video.end + '</span></p>' +
@@ -160,7 +160,7 @@ BlogEntry.prototype={
                         '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
                         '<h5><span class="date">' + this.time + '</span></h5>' +
                         '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                        '<span class="postImage"><img src = "' + this.photos + '</span>'+
+                        '<span class="postImage"><img src = "' + this.photos + '">' + '</span>'+
                         '<br>' +
                         '<span class="postVideo">' + this.video.link + '</span>' +
                         '<div class="blogTags">' +
@@ -170,7 +170,7 @@ BlogEntry.prototype={
                         '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
                         '<h5><span class="date">' + this.time + '</span></h5>' +
                         '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                        '<span class="postImage"><img src = "' + this.photos + '</span>'+
+                        '<span class="postImage"><img src = "' + this.photos + '">' +'</span>'+
                         '<br>' +
                         '<span class="postVideo">' + this.video.link + '</span>' +
                         '<p class="center">Start time: <span class="timeCodes">' + this.video.start + '</span></p>' +
@@ -181,7 +181,7 @@ BlogEntry.prototype={
                         '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
                         '<h5><span class="date">' + this.time + '</span></h5>' +
                         '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                        '<span class="postImage"><img src = "' + this.photos + '</span>'+
+                        '<span class="postImage"><img src = "' + this.photos + '">' + '</span>'+
                         '<br>' +
                         '<span class="postVideo">' + this.video.link + '</span>' +
                         '<p class="center">End time: <span class="timeCodes">' + this.video.end + '</span></p>' +
@@ -256,6 +256,25 @@ $(document).ready(function(){
     user.bio.state = $(".state").val();
     user.bio.getFullName();
     user.bio.addImgTag();
+
+    if(user.bio.nameArr[0] === ""){
+      return alert("Please enter your first name");
+    } else if(user.bio.nameArr[1] === ""){
+      return alert("Please enter your last name");
+    } else if(user.bio.blogTitle === ""){
+      return alert("Please enter a blog title");
+    } else if(user.bio.userName === ""){
+      return alert("Please enter a username");
+    } else if(user.bio.bioText === ""){
+      return alert("Please enter a short bio");
+    } else if(user.bio.avatarURL === ""){
+      return alert("Please enter an avatar image");
+    } else if(user.bio.city === ""){
+      return alert("Please enter your city");
+    } else if(user.bio.state === ""){
+      return alert("Please enter your state");
+    };
+
     $("#landingPage").hide("slide", { direction: "left" }, 1000);
     $("#mainblog").delay(1000).fadeIn(1000);
     $("#userSidebar").delay(1000).fadeIn(1000);
