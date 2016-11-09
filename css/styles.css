@@ -82,7 +82,7 @@ body {
   border-color: black;
 }
 
-.btn-danger:hover {
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active:hover {
    background: #0B4C40;
    color: white;
    border-color: #0B4C40;
@@ -96,6 +96,13 @@ body {
 
 #newBlogEntry {
   display: none;
+}
+.clickable {
+  color: #272C2B;
+  text-decoration: underline;
+}
+.clickable:hover {
+  color: #0E6251;
 }
 /*////////////////////////////////// mainblog stying ////////////////////////////////*/
 
@@ -178,17 +185,21 @@ margin: 0 auto;
   overflow: auto;
   height: 100px;
 }
-#createDeleteButtons {
+.alignButtons {
   margin-top: 5%;
   display: block;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
-#createDeleteButtons button {
+.alignButtons button {
   border-radius: 0%;
   margin: 2%;
   width: 40%;
+}
+
+#doneEntryButton {
+  display: none;
 }
 
 .avatarImg img {

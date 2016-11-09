@@ -80,9 +80,20 @@
                   <input type="text" class="form-control blogEntryImage">
                 </div>
                 <div class="form-group">
-                  <label for="blogEntryVid">Upload Video (Enter embed link of a video you want to upload. Hint: Studio recordings from major record labels may be restricted.)</label>
-                  <input type="text" class="form-control blogEntryImage">
+                  <label for="blogEntryVid">Upload YouTube Video - <span class="clickable">Click Here for Instructions</span>
+                    <p>(Enter embed link of a video you want to upload. Hint: Studio recordings from major record labels may be restricted.)</p></label>
+                  <input type="text" class="form-control blogEntryVid" placeholder='<iframe width="560" height="315" src="https://www.youtube.com/embed/a5_QV97eYqM" frameborder="0" allowfullscreen></iframe>'>
                 </div>
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <label for="vidStartTime">Start time for video playback:</label>
+                    <input type="text" class="form-control vidStartTime">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="vidEndTime">End time for video playback:</label>
+                    <input type="text" class="form-control vidEndTime">
+                  </div>
+                </div><!--end of vid row-->
                 <div class="form-group">
                   <label for="blogEntryContent">Blog Entry</label>
                   <textarea class="form-control blogEntryContent" rows="10"></textarea>
@@ -94,7 +105,10 @@
                   <br>
                 </div>
                 <span class="btn btn-primary" id="add-blogTag">Add Another Tag</span>
-                <button type="submit" class="btn" id="submitBlogEntry">Create post</button>
+                <div class="alignButtons">
+                  <button type="submit" class="btn" id="submitBlogEntry">Create post</button>
+                  <button type="button" class="btn btn-danger" id="returnButton">Return to blog</button>
+                </div>
               </form>
             </div><!--end of newBlogEntry-->
       <!-- Receptacle where each blog entry will be prepended. -->
@@ -136,14 +150,15 @@
               <h4>List of Entries</h4>
               <div id="scrollingLinks">
                 <ul id="sidebarBlogList">
-                  <li><a href="#samplePost">Sample Post</a></li>
+                  <li><a href="#samplePost">Sample Post</a><span class="xIcon" id="samplePostIcon"><img src="img/redX.png" alt= "X"></span></li>
                 </ul>
               </div><!--end of scrollingLinks-->
             </div><!--end of sidebarBlogEntries-->
             <br>
-            <div id="createDeleteButtons">
+            <div class="alignButtons">
               <button type="button" id="newEntryButton" class="btn btn-default">Create!</button>
               <button type="button" id="deleteEntryButton" class="btn btn-danger">Delete!</button>
+              <button type="button" id="doneEntryButton" class="btn btn-success">Done!</button>
             </div>
           </div><!--end of column-->
         </div><!--end of mainblog row-->
