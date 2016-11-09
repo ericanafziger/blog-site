@@ -289,6 +289,8 @@ $(document).ready(function(){
 
   //makes new entry form appear
   $("#newEntryButton").click(function() {
+    $("#insertVideoDiv").text("");
+
     var video = $(".playerid").attr("src");
     $(".playerid").attr("src","");
     $(".playerid").attr("src",video);
