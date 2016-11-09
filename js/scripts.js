@@ -82,6 +82,7 @@ var BlogEntry = function(time, entryTitle, photos, video, entryText, entryTags, 
   this.entryTags = [];
   this.asString = blogAsString;
   this.tagsAsStr = "";
+  this.videosAsStr = "";
   this.listItem = listItem;
   this.entryClass = entryClass;
 
@@ -101,17 +102,20 @@ BlogEntry.prototype={
       };
     };
   },
-
+  getVideoStr: function(){
+    for(var i = 0; i < this.video.length; i++){
+      this.videosAsStr += '<span class="postVideo">' + this.video[i].link + '</span>' +
+      '<p class="center">Start and end time: <span class="timeCodes">' + this.video[i].start + ' - ' + this.video[i].end + '</span></p>'
+    }
+  },
   toString: function(){
-    if (this.photos !== "" && this.video.start !== "" && this.video.end !== "") {
+    if (this.photos === "" ) {
     this.asString = '<div id="' + this.entryClass + '">' +
                       '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
                       '<h5><span class="date">' + this.time + '</span></h5>' +
                       '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                      '<span class="postImage"><img src = "' + this.photos + '">' + '</span>'+
-                      '<br>' +
-                      '<span class="postVideo">' + this.video.link + '</span>' +
-                      '<p class="center">Start and end time: <span class="timeCodes">' + this.video.start + ' - ' + this.video.end + '</span></p>' +
+                      '<span class="postImage"><img src = "' + this.photos + '"</span>'+
+                      '<br>' + this.videosAsStr +
                       '<div class="blogTags">' +
                       '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
     } else if (this.photos === "" && this.video.start === "" && this.video.end === "") {
@@ -362,6 +366,7 @@ $(document).ready(function(){
 
     blogEntry.getEntryTags();
     blogEntry.entryClass = "blogEntry" + user.blogEntries.length;
+    blogEntry.getVideoStr();
     blogEntry.toString();
 
 
