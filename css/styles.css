@@ -8,6 +8,11 @@ body {
 .highlight {
   color: #0E6251;
 }
+
+.justify {
+  text-align: justify;
+}
+
 #siteName{
   height: 220px;
   background-color: black;
@@ -35,12 +40,12 @@ body {
   z-index: -1;
 }
 
-#userRegister, #mainblog {
+#userRegister, #mainblog, #aboutPage {
   width: 100%;
   background:rgba(255,255,255, 0.7); /*changes background color*/
   padding: 5%;
 }
-#userRegister h1, #mainblog h1 {
+#userRegister h1, #mainblog h1, #aboutPage h1 {
   font-size: 3em;
   font-weight: bold;
   text-align: center;
@@ -92,9 +97,14 @@ body {
  }
 
 /*////////////////////////////////// landingPage stying ////////////////////////////////*/
-#landingPage, #mainblog {
+#landingPage, #mainblog, #aboutPage{
   margin-top: 30%;
 }
+
+#landingPage {
+  display: none;
+}
+
 /*////////////////////////////////// newBlogEntry stying ////////////////////////////////*/
 
 #newBlogEntry {
