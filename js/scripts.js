@@ -66,15 +66,24 @@ var User = function(bio, blogEntries, blogTitle){
   this.blogTitle = blogTitle;
 };
 
-var BlogEntry = function(entryTitle, photos, entryText, entryTags, blogAsString, tagsAsStr, listItem, entryClass) {
+var Video = function(link, start, end){
+  this.link = link;
+  this.start = start;
+  this.end = end;
+}
+
+var BlogEntry = function(time, entryTitle, photos, video, entryText, entryTags, blogAsString, tagsAsStr, listItem, entryClass) {
+  this.time = time;
   this.entryTitle = entryTitle;
   this.photos = photos;
+  this.video = video;
   this.entryText = entryText;
   this.entryTags = [];
   this.asString = blogAsString;
   this.tagsAsStr = "";
   this.listItem = listItem;
   this.entryClass = entryClass;
+
 };
 
 BlogEntry.prototype={
@@ -96,15 +105,13 @@ BlogEntry.prototype={
 
     this.asString = '<div id="' + this.entryClass + '">' +
                       '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
-                      '<h5><span class="date"></span></h5>' +
+                      '<h5><span class="date">' + this.time + '</span></h5>' +
                       '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
                       '<span class="postImage"><img src = "' + this.photos + '" alt = "' + this.entryClass + ' photo"></span>'+
                       '<br>' +
-                      '<span class="postVideo"><iframe width="560" height="315" src="https://www.youtube.com/embed/hYKpVWp4Hcc" frameborder="0" allowfullscreen></iframe></span>' +
-                      '<p class="center">Start and end time: <span class="timeCodes">0:45 - 1:00</span></p>' +
-                      '<span class="postVideo"><iframe width="560" height="315" src="https://www.youtube.com/embed/a5_QV97eYqM" frameborder="0" allowfullscreen></iframe></span>' +
-                      '<p class="center">Start and end time: <span class="timeCodes">2:12 - 2:22</span></p>' +
-                      '<div class="blogTags">'
+                      '<span class="postVideo">' + this.video.link + '</span>' +
+                      '<p class="center">Start and end time: <span class="timeCodes">' + this.video.start + ' - ' + this.video.end + '</span></p>' +
+                      '<div class="blogTags">' +
                       '<br>' + this.tagsAsStr + '<br><br></div>' + '--------------------------HR---------------------------- <br><br></div>';
   },
   toListItem: function() {
@@ -180,7 +187,12 @@ $(document).ready(function(){
     var entryTitle = $(".blogEntryTitle").val();
     var photos = $(".blogEntryImage").val();
     var entryText = $(".blogEntryContent").val();
-    var blogEntry = new BlogEntry(entryTitle, photos, entryText);
+    var entryVideo = $(".blogEntryVid").val();
+    var startTime = $(".vidStartTime").val();
+    var endTime = $(".vidEndTime").val();
+    var submitTime = time();
+    var videoEntry = new Video(entryVideo, startTime, endTime);
+    var blogEntry = new BlogEntry(submitTime, entryTitle, photos, videoEntry, entryText);
 
     //runs through each tag for current blog entry and adds them to the object blogEntry
     $(".blogEntryTags").each(function() {
@@ -205,7 +217,7 @@ $(document).ready(function(){
         $(sidebarListItemClassStr).hide();
         $(entryClassStr).hide();
     });
-    
+
     $("#samplePostIcon").click(function(){
         $("#samplePost").hide();
         $("#samplePostIcon").hide();
