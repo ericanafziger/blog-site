@@ -250,6 +250,7 @@ $(document).ready(function(){
 
   //makes new entry form appear
   $("#newEntryButton").click(function() {
+    $(".justTags").html('<label for="blogEntryTags">Blog Entry Tags</label><input type="text" class="form-control blogEntryTags" placeholder="#yourTag"> <br>');
     $("#landingPage").hide();
     $(".allBlogEntries").hide();
     $("#newBlogEntry").show();
