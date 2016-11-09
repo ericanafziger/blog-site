@@ -97,21 +97,23 @@
                 </div>
 
                 <div id="insertVideoDiv">
-                  <div class="form-group">
-                    <label for="blogEntryVid">Upload YouTube Video - <span class="clickable">Click Here for Instructions</span>
-                      <p>(Enter embed link of a video you want to upload. Hint: Studio recordings from major record labels may be restricted.)</p></label>
-                    <input type="text" class="form-control blogEntryVid" placeholder='<iframe width="560" height="315" src="https://www.youtube.com/embed/a5_QV97eYqM" frameborder="0" allowfullscreen></iframe>'>
-                  </div>
-                  <div class="row">
-                    <div class="form-group col-md-4">
-                      <label for="vidStartTime">Start time for video playback:</label>
-                      <input type="text" class="form-control vidStartTime" placeholder="0:45">
+                  <div class="getVideo">
+                    <div class="form-group">
+                      <label for="blogEntryVid">Upload YouTube Video - <span class="clickable">Click Here for Instructions</span>
+                        <p>(Enter embed link of a video you want to upload. Hint: Studio recordings from major record labels may be restricted.)</p></label>
+                      <input type="text" class="form-control blogEntryVid" placeholder='<iframe width="560" height="315" src="https://www.youtube.com/embed/a5_QV97eYqM" frameborder="0" allowfullscreen></iframe>'>
                     </div>
-                    <div class="form-group col-md-4">
-                      <label for="vidEndTime">End time for video playback:</label>
-                      <input type="text" class="form-control vidEndTime" placeholder="1:30">
-                    </div>
-                  </div> <!--end of vid row-->
+                    <div class="row">
+                      <div class="form-group col-md-4">
+                        <label for="vidStartTime">Start time for video playback:</label>
+                        <input type="text" class="form-control vidStartTime" placeholder="0:45">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="vidEndTime">End time for video playback:</label>
+                        <input type="text" class="form-control vidEndTime" placeholder="1:30">
+                      </div>
+                    </div> <!--end of vid row-->
+                  </div><!--end of getVideo div-->
                 </div> <!--end of insertVideos-->
                 <button type="button" class="btn btn-primary" id="insertVideoButton">Add video</button>
                 <br>

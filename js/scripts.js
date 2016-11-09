@@ -77,7 +77,7 @@ var BlogEntry = function(time, entryTitle, photos, video, entryText, entryTags, 
   this.time = time;
   this.entryTitle = entryTitle;
   this.photos = photos;
-  this.video = video;
+  this.video = [];
   this.entryText = entryText;
   this.entryTags = [];
   this.asString = blogAsString;
@@ -271,7 +271,8 @@ $(document).ready(function(){
 
   // adds another video input form
   $("#insertVideoButton").click(function(){
-    $("#insertVideoDiv").append('<div class="form-group">' +
+    $("#insertVideoDiv").append('<div class="getVideo">' +
+                                '<div class="form-group">' +
                                 '<label for="blogEntryVid">Upload Another YouTube Video</label>' +
                                 '<input type="text" class="form-control blogEntryVid">' +
                                 '</div>' +
@@ -283,6 +284,7 @@ $(document).ready(function(){
                                 '<div class="form-group col-md-4">' +
                                 '<label for="vidEndTime">End time for video playback:</label>' +
                                 '<input type="text" class="form-control vidEndTime" placeholder="1:30">' +
+                                '</div>' +
                                 '</div>' +
                                 '</div>');
   });
@@ -315,12 +317,19 @@ $(document).ready(function(){
     var entryTitle = $(".blogEntryTitle").val();
     var photos = $(".blogEntryImage").val();
     var entryText = $(".blogEntryContent").val();
-    var entryVideo = $(".blogEntryVid").val();
-    var startTime = $(".vidStartTime").val();
-    var endTime = $(".vidEndTime").val();
     var submitTime = time();
-    var videoEntry = new Video(entryVideo, startTime, endTime);
-    var blogEntry = new BlogEntry(submitTime, entryTitle, photos, videoEntry, entryText);
+
+    var blogEntry = new BlogEntry(submitTime, entryTitle, photos, [], entryText);
+
+    //runs through each video for current blog entry and adds them to the object videoEntry
+    $(".getVideo").each(function() {
+      var entryVideo = $(this).find("input.blogEntryVid").val();
+      var startTime = $(this).find("input.vidStartTime").val();
+      var endTime = $(this).find("input.vidEndTime").val();
+      var videoEntry = new Video(entryVideo, startTime, endTime);
+
+      blogEntry.video.push(videoEntry);
+    });
 
     //runs through each tag for current blog entry and adds them to the object blogEntry
     $(".blogEntryTags").each(function() {
