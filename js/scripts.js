@@ -209,6 +209,18 @@ $(document).ready(function(){
     $("#landingPage").delay(700).fadeIn(1000);
   })
 
+
+  $("#samplePostIcon").click(function(){
+      $("#samplePost").hide();
+      $("#samplePostListItem").hide();
+  });
+
+  $("#samplePostIcon1").click(function(){
+      $("#samplePost1").hide();
+      $("#samplePostListItem1").hide();
+  });
+
+
   //character counter for profile bio
   var text_max = 250;
   $('#count_message').html(text_max + ' remaining');
@@ -315,16 +327,6 @@ $(document).ready(function(){
     $(XentryClassStr).click(function(){
         $(sidebarListItemClassStr).hide();
         $(entryClassStr).hide();
-    });
-
-    $("#samplePostIcon").click(function(){
-        $("#samplePost").hide();
-        $("#samplePostListItem").hide();
-    });
-
-    $("#samplePostIcon1").click(function(){
-        $("#samplePost1").hide();
-        $("#samplePostListItem1").hide();
     });
 
     $(".allBlogEntries").delay(700).fadeIn();
