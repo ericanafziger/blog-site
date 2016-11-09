@@ -11,6 +11,19 @@
   <body>
     <img src="img/titleImage.png" alt="color title image" id="titleImage">
     <div class="container">
+      <div id="aboutPage">
+        <h1>About this page</h1>
+        <br>
+        <h4 class="justify">Welcome to the Musical Talismans blog. The purpose of this site is to create a platform for the study of popular music themes.</h4>
+
+        <p class="justify">Have you ever noticed that a new song sounds suspiciously similar to a pre-existing one? The phenomenon of intellectual plagiarism is very common in music. Film soundtracks often implement the same techniques to create a known effect in the audience.</p>
+
+        <p class="justify">A talisman is a symbol of power; a musical talisman is a technique that draws its power from pre-existing music. Just as a lock of hair from someone could be attached to a voodoo doll to affect that person from a distance, musical talismans borrow key musical ideas from a previous song to draw upon its success and power.</p>
+
+        <p class="justify">This blog creates a platform for you to post your own observations of these magical-music devices. We have included a couple of examples to get you started.</p>
+        <br>
+        <center><button type="button" class="btn btn-primary" id="goToRegister">Create My Blog</button></center>
+      </div>
       <div id="landingPage">
         <form id="userRegister">
           <h1>Create a New Profile</h1>
@@ -116,6 +129,14 @@
             </div><!--end of newBlogEntry-->
       <!-- Receptacle where each blog entry will be prepended. -->
             <div class="allBlogEntries">
+              <div id="samplePost1">
+                <h2><span class="postTitle">Similar TV Themes: Simpsons and the Jetsons</span></h2>
+                <h5><span class="date">November 9, 2016 11:11 am</span></h5>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1LMxOkhQ0NI" frameborder="0" allowfullscreen></iframe>
+                <br>
+                <p>Have you ever noticed that certain film and TV themes borrow from earlier successful themes? Here is one example video that shows the relationship between the Simpsons theme and its predecessor, the Jetsons. </p>
+                <span class="blogTagID">#Simpsons</span>, <span class="blogTagID">#Jetsons</span>, <span class="blogTagID">#Tv Themes</span>
+              </div>
               <div id="samplePost">
                 <h2><span class="postTitle">Blurred Lines - When New Songs Copy Old Songs</span></h2>
                 <h5><span class="date">November 8, 2016 10:15 am</span></h5>
@@ -129,8 +150,8 @@
                   <p>As if the pun were not bad enough, Gaye’s original song was called “Got To Give It Up”. You can listen to the songs back to back in the video above.</p>
 
                   <p>They share similar bass guitar rhythms, percussive rhythms that are very similar aesthetically, and an identical tempo. On the other hand, the vocal lines are totally different. Gaye’s track also made use of some keyboard chords and a party ambience that were missing from Blurred Lines.</p>
-                </span>
-                <span class="postImage">
+
+                  <p>Here is one more pair of videos, featuring the bands "Fun." and "Simon and Garfunkle".</p>
                 </span>
                 <br>
                 <span class="postVideo"><iframe width="560" height="315" src="https://www.youtube.com/embed/hYKpVWp4Hcc" frameborder="0" allowfullscreen></iframe></span>
@@ -139,7 +160,7 @@
                 <p class="center">Start and end time: <span class="timeCodes">2:12 - 2:22</span></p>
                 <br>
                 <div class="blogTags">
-                  <span class="blogTagID">#waterfall</span>, <span class="blogTagID">#nature</span>, <span class="blogTagID">#sunlight</span>, <span class="blogTagID">#forest</span>
+                  <span class="blogTagID">#Robin Thicke</span>, <span class="blogTagID">#Marbin Gaye</span>, <span class="blogTagID">#Blurred Lines</span>
                   <br>
                   <br>
                 </div>
@@ -161,7 +182,8 @@
               <h4>List of Entries</h4>
               <div id="scrollingLinks">
                 <ul id="sidebarBlogList">
-                  <li id =samplePostListItem><a href="#samplePost">Sample Post</a><span class="xIcon" id="samplePostIcon"><img src="img/redX.png" alt= "X"></span></li>
+                  <li id =samplePostListItem1><a href="#samplePost1">Simpsons and Jetsons (Sample Post)</a><span class="xIcon" id="samplePostIcon1"><img src="img/redX.png" alt= "X"></span></li>
+                  <li id =samplePostListItem><a href="#samplePost">Blurred Lines (Sample Post)</a><span class="xIcon" id="samplePostIcon"><img src="img/redX.png" alt= "X"></span></li>
                 </ul>
               </div><!--end of scrollingLinks-->
             </div><!--end of sidebarBlogEntries-->

@@ -200,6 +200,11 @@ var addTags = function(tags) {
 //frontend logic
 $(document).ready(function(){
 
+  $("#goToRegister").click(function(){
+    $("#aboutPage").fadeOut();
+    $("#landingPage").delay(700).fadeIn(1000);
+  })
+
   //character counter for profile bio
   var text_max = 250;
   $('#count_message').html(text_max + ' remaining');
@@ -305,6 +310,11 @@ $(document).ready(function(){
     $("#samplePostIcon").click(function(){
         $("#samplePost").hide();
         $("#samplePostListItem").hide();
+    });
+
+    $("#samplePostIcon1").click(function(){
+        $("#samplePost1").hide();
+        $("#samplePostListItem1").hide();
     });
 
     $(".allBlogEntries").delay(700).fadeIn();
