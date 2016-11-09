@@ -220,7 +220,7 @@ $(document).ready(function(){
 
     $("#samplePostIcon").click(function(){
         $("#samplePost").hide();
-        $("#samplePostIcon").hide();
+        $("#samplePostListItem").hide();
     });
 
     $(".allBlogEntries").show();
