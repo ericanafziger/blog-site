@@ -209,7 +209,6 @@ $(document).ready(function(){
     $("#mainblog").delay(1000).fadeIn(1000);
     $("#userSidebar").delay(1000).fadeIn(1000);
     showSidebarInput();
-    console.log(user);
   });
 
   //adds another input box for another tag
@@ -296,8 +295,6 @@ $(document).ready(function(){
       var videoEntry = new Video(entryVideo, startTime, endTime);
       blogEntry.video.push(videoEntry);
     });
-    debugger;
-    console.log(entries.indexOf(""));
 
     //runs through each tag for current blog entry and adds them to the object blogEntry
     $(".blogEntryTags").each(function() {
@@ -310,40 +307,12 @@ $(document).ready(function(){
     blogEntry.entryClass = "blogEntry" + user.blogEntries.length;
     blogEntry.getVideoStr();
     blogEntry.toString();
-    console.log(blogEntry);
-
 
     var XentryClassStr = '#X' + blogEntry.entryClass + ' img';
     var entryClassStr = '#' + blogEntry.entryClass;
     var sidebarListItemClassStr = '#sidebarListItem' + blogEntry.entryClass;
     blogEntry.toListItem();
 
-
-
-    $(XentryClassStr).click(function(){
-        $(sidebarListItemClassStr).hide();
-        $(entryClassStr).hide();
-    });
-
-    if(entries.indexOf("") !== -1){
-      console.log(entries.indexOf(""));
-      if(window.confirm("Your blog might look a little wonky if you don't fill out all the forms. Click OK if you want to leave them empty, click cancel if you would like to fill them out.")){
-        user.blogEntries.push(blogEntry);
-        $("#sidebarBlogList").prepend(blogEntry.listItem);
-        $(".allBlogEntries").prepend(blogEntry.asString);
-        $(".allBlogEntries").delay(700).fadeIn();
-        $("#newBlogEntry").fadeOut();
-        reset();
-      }
-    }
-    else{
-      user.blogEntries.push(blogEntry);
-      $("#sidebarBlogList").prepend(blogEntry.listItem);
-      $(".allBlogEntries").prepend(blogEntry.asString);
-      $(".allBlogEntries").delay(700).fadeIn();
-      $("#newBlogEntry").fadeOut();
-      reset();
-    }
 
 
 
@@ -366,8 +335,34 @@ $(document).ready(function(){
       $(".tagSearchResult").show();
       user.selectedEntries = [];
     });
-});
-
+    if(entries.indexOf("") !== -1){
+      if(window.confirm("Your blog might look a little wonky if you don't fill out all the forms. Click OK if you want to leave them empty, click cancel if you would like to fill them out.")){
+        user.blogEntries.push(blogEntry);
+        $("#sidebarBlogList").prepend(blogEntry.listItem);
+        $(".allBlogEntries").prepend(blogEntry.asString);
+        $(XentryClassStr).click(function(){
+            $(sidebarListItemClassStr).hide();
+            $(entryClassStr).hide();
+        });
+        $(".allBlogEntries").delay(700).fadeIn();
+        $("#newBlogEntry").fadeOut();
+        reset();
+      }
+    }
+    else{
+      user.blogEntries.push(blogEntry);
+      $("#sidebarBlogList").prepend(blogEntry.listItem);
+      $(".allBlogEntries").prepend(blogEntry.asString);
+      $(XentryClassStr).click(function(){
+          $(sidebarListItemClassStr).hide();
+          $(entryClassStr).hide();
+      });
+      $(".allBlogEntries").delay(700).fadeIn();
+      $("#newBlogEntry").fadeOut();
+      reset();
+    }
+  });
+//end of submit function
   $("#deleteEntryButton").click(function(){
     $(".xIcon img").show();
     $("#doneEntryButton").show();
@@ -378,4 +373,5 @@ $(document).ready(function(){
     $("#doneEntryButton").hide();
     $("#deleteEntryButton").show();
   });
-});
+
+}); // end of document reaady
