@@ -205,6 +205,20 @@ var addTags = function(tags) {
 //frontend logic
 $(document).ready(function(){
 
+  $("#whiteCSS").click(function(){
+    $("body:first").removeClass("dark")
+    $("body:first").addClass("light");
+    $("#titleImage2").show();
+    $("#titleImage1").hide();
+  });
+
+  $("#darkCSS").click(function(){
+    $("body:first").removeClass("light")
+    $("body:first").addClass("dark");
+    $("#titleImage2").hide();
+    $("#titleImage1").show();
+  });
+
   $("#goToRegister").click(function(){
     var video = $(".playerid").attr("src");
     $(".playerid").attr("src","");

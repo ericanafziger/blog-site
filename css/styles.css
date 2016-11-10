@@ -1,7 +1,26 @@
 body {
-  background: black;
   font-family: 'Raleway', sans-serif;
 }
+
+.light {
+  background: white;
+}
+
+.dark {
+  background-color: black;
+}
+
+#titleImage2 {
+  display: none;
+  float: left;
+  margin-top: 30px;
+  margin-left: 10%; /* pushes title image farther to the right*/
+  /*margin-bottom: 400px;*/
+  position: absolute;
+  max-width: 90%;
+  z-index: -1;
+}
+
 .floatLeft {
   float: left;
 }
@@ -13,24 +32,7 @@ body {
   text-align: justify;
 }
 
-#siteName{
-  height: 220px;
-  background-color: black;
-  margin-top: 125px;
-  padding-top: 50px;
-  position: relative;
-  z-index: -2;
-  margin-left: 1%; /* pushes siteName farther to the right */
-}
-
-#siteName h1 {
-    font-size: 80px;
-    color: white;
-    text-align: center;
-    font-family: 'Poiret One', cursive;
-}
-
-#titleImage {
+#titleImage1 {
   float: left;
   margin-top: 30px;
   margin-left: 10%; /* pushes title image farther to the right*/
@@ -203,6 +205,10 @@ margin-right: auto;
 
 /*////////////////////////////////// sidebar stying ////////////////////////////////*/
 
+.btnFont {
+  color: black;
+}
+
 #userSidebar {
   background: rgba(0, 0, 0, 0.6);
   padding: 2%;
@@ -217,6 +223,9 @@ margin-right: auto;
 #scrollingLinks {
   overflow: auto;
   height: 150px;
+}
+.xIcon:hover {
+  cursor: pointer;
 }
 .alignButtons {
   margin-top: 5%;
@@ -247,6 +256,28 @@ margin-right: auto;
 #doneEntryButton {
   display: none;
 }
+
+@media screen and (max-width: 990px)  {
+  .btn-default {
+    font-size: .8em;
+    padding-left: 5%;
+  }
+
+  .btn-danger {
+    font-size: .8em;
+    padding-left: 5%;
+  }
+
+  .btn-success {
+    font-size: .8em;
+    padding-left: 5%;
+  }
+
+  .btnFont {
+    font-size: .8em;
+    padding-left: 5%;
+  }
+};
 
 .avatarImg img {
   border-radius: 50%;
