@@ -198,6 +198,7 @@ $(document).ready(function(){
     user.bio.avatarURL = $(".avatar").val();
     user.bio.city = $(".city").val();
     user.bio.state = $(".state").val();
+    $(".blogTitle").text(user.bio.blogTitle);
     user.bio.getFullName();
     user.bio.addImgTag();
 
