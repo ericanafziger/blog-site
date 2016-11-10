@@ -2,7 +2,7 @@
 
 #### _Music Blog for Education, 11.8.2016_
 
-#### By _**Ezra, Erica, Lina, Steve**_
+#### By _**Ezra Sandzer-Bell, Erica Nafziger, Lina Shadrach, Steve Burton**_
 
 ## Description
 
