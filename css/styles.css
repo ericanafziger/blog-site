@@ -254,6 +254,23 @@ margin-right: auto;
   display: none;
 }
 
+@media screen and (max-width: 990px)  {
+  .btn-default {
+    font-size: .8em;
+    padding-left: 5%;
+  }
+
+  .btn-danger {
+    font-size: .8em;
+    padding-left: 5%;
+  }
+
+  .btnFont {
+    font-size: .8em;
+    padding-left: 5%;
+  }
+};
+
 .avatarImg img {
   border-radius: 50%;
   margin-bottom: 7%;
