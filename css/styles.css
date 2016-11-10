@@ -224,6 +224,9 @@ margin-right: auto;
   overflow: auto;
   height: 150px;
 }
+.xIcon:hover {
+  cursor: pointer;
+}
 .alignButtons {
   margin-top: 5%;
   display: block;
@@ -261,6 +264,11 @@ margin-right: auto;
   }
 
   .btn-danger {
+    font-size: .8em;
+    padding-left: 5%;
+  }
+
+  .btn-success {
     font-size: .8em;
     padding-left: 5%;
   }
