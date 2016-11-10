@@ -316,25 +316,7 @@ $(document).ready(function(){
 
 
 
-    $(".blogTagID").click(function(){
-      var tagClasses = $(this).attr('class').split(' ');
-      for(var i = 0; i < user.blogEntries.length; i++){
-        for(var j = 0; j < user.blogEntries[i].entryTags.length; j++){
-          if(tagClasses[1] === user.blogEntries[i].entryTags[j]){
-            user.selectedEntries.push(user.blogEntries[i]);
-          }
-        }
-      }
-      $(".printTagSearch").text("");
 
-      for(var i = 0; i < user.selectedEntries.length; i++){
-        $(".printTagSearch").prepend(user.selectedEntries[i].asString);
-      }
-
-      $(".allBlogEntries").hide();
-      $(".tagSearchResult").show();
-      user.selectedEntries = [];
-    });
     if(entries.indexOf("") !== -1){
       if(window.confirm("Your blog might look a little wonky if you don't fill out all the forms. Click OK if you want to leave them empty, click cancel if you would like to fill them out.")){
         user.blogEntries.push(blogEntry);
@@ -343,6 +325,25 @@ $(document).ready(function(){
         $(XentryClassStr).click(function(){
             $(sidebarListItemClassStr).hide();
             $(entryClassStr).hide();
+        });
+        $(".blogTagID").click(function(){
+          var tagClasses = $(this).attr('class').split(' ');
+          for(var i = 0; i < user.blogEntries.length; i++){
+            for(var j = 0; j < user.blogEntries[i].entryTags.length; j++){
+              if(tagClasses[1] === user.blogEntries[i].entryTags[j]){
+                user.selectedEntries.push(user.blogEntries[i]);
+              }
+            }
+          }
+          $(".printTagSearch").text("");
+
+          for(var i = 0; i < user.selectedEntries.length; i++){
+            $(".printTagSearch").prepend(user.selectedEntries[i].asString);
+          }
+
+          $(".allBlogEntries").hide();
+          $(".tagSearchResult").show();
+          user.selectedEntries = [];
         });
         $(".allBlogEntries").delay(700).fadeIn();
         $("#newBlogEntry").fadeOut();
@@ -356,6 +357,25 @@ $(document).ready(function(){
       $(XentryClassStr).click(function(){
           $(sidebarListItemClassStr).hide();
           $(entryClassStr).hide();
+      });
+      $(".blogTagID").click(function(){
+        var tagClasses = $(this).attr('class').split(' ');
+        for(var i = 0; i < user.blogEntries.length; i++){
+          for(var j = 0; j < user.blogEntries[i].entryTags.length; j++){
+            if(tagClasses[1] === user.blogEntries[i].entryTags[j]){
+              user.selectedEntries.push(user.blogEntries[i]);
+            }
+          }
+        }
+        $(".printTagSearch").text("");
+
+        for(var i = 0; i < user.selectedEntries.length; i++){
+          $(".printTagSearch").prepend(user.selectedEntries[i].asString);
+        }
+
+        $(".allBlogEntries").hide();
+        $(".tagSearchResult").show();
+        user.selectedEntries = [];
       });
       $(".allBlogEntries").delay(700).fadeIn();
       $("#newBlogEntry").fadeOut();
