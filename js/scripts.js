@@ -336,13 +336,27 @@ $(document).ready(function(){
   $(".clickable").click(function(){
     alert('1. Go to http://www.youtube.com \n2. Search and open your desired video \n3. Below the video, click the share button (look for the right-pointing arrow) \n4. Click the embed button that appears. \n5. Copy the embed URL to be pasted into your blog form.');
   });
-
+  var reset = function(){
+    $(".blogEntryTitle").val("");
+    $(".blogEntryImage").val("");
+    $(".blogEntryContent").val("");
+    $(".blogEntryVid").val("");
+    $(".vidStartTime").val("");
+    $(".vidEndTime").val("");
+    $(".blogEntryTags").each(function() {
+      $(this).val("");
+    });
+  }
   //submit for new blog entry
   $(".blogEntryForm").submit(function(event){
     event.preventDefault();
+    var empty = false;
+    var entries = [];
     var entryTitle = $(".blogEntryTitle").val();
     var photos = $(".blogEntryImage").val();
     var entryText = $(".blogEntryContent").val();
+    entries.push(entryTitle, photos, entryText);
+
     var submitTime = time();
 
     var blogEntry = new BlogEntry(submitTime, entryTitle, photos, [], entryText);
@@ -352,10 +366,12 @@ $(document).ready(function(){
       var entryVideo = $(this).find("input.blogEntryVid").val();
       var startTime = $(this).find("input.vidStartTime").val();
       var endTime = $(this).find("input.vidEndTime").val();
+      entries.push(entryVideo, startTime, endTime);
       var videoEntry = new Video(entryVideo, startTime, endTime);
-
       blogEntry.video.push(videoEntry);
     });
+    debugger;
+    console.log(entries.indexOf(""));
 
     //runs through each tag for current blog entry and adds them to the object blogEntry
     $(".blogEntryTags").each(function() {
@@ -374,26 +390,34 @@ $(document).ready(function(){
     var entryClassStr = '#' + blogEntry.entryClass;
     var sidebarListItemClassStr = '#sidebarListItem' + blogEntry.entryClass;
     blogEntry.toListItem();
-    user.blogEntries.push(blogEntry);
-    $("#sidebarBlogList").prepend(blogEntry.listItem);
-    $(".allBlogEntries").prepend(blogEntry.asString);
+
+
 
     $(XentryClassStr).click(function(){
         $(sidebarListItemClassStr).hide();
         $(entryClassStr).hide();
     });
 
-    $(".allBlogEntries").delay(700).fadeIn();
-    $("#newBlogEntry").fadeOut();
-    $(".blogEntryTitle").val("");
-    $(".blogEntryImage").val("");
-    $(".blogEntryContent").val("");
-    $(".blogEntryVid").val("");
-    $(".vidStartTime").val("");
-    $(".vidEndTime").val("");
-    $(".blogEntryTags").each(function() {
-      $(this).val("");
-    });
+    if(entries.indexOf("") !== -1){
+      if(window.confirm("Your blog might look a little wonky if you don't fill out all the forms. Click OK if you want to leave them empty, click cancel if you would like to fill them out.")){
+        user.blogEntries.push(blogEntry);
+        $("#sidebarBlogList").prepend(blogEntry.listItem);
+        $(".allBlogEntries").prepend(blogEntry.asString);
+        $(".allBlogEntries").delay(700).fadeIn();
+        $("#newBlogEntry").fadeOut();
+        reset();
+      }
+    }
+    else{
+      user.blogEntries.push(blogEntry);
+      $("#sidebarBlogList").prepend(blogEntry.listItem);
+      $(".allBlogEntries").prepend(blogEntry.asString);
+      $(".allBlogEntries").delay(700).fadeIn();
+      $("#newBlogEntry").fadeOut();
+      reset();
+    }
+
+
 
     $(".blogTagID").click(function(){
       var tagClasses = $(this).attr('class').split(' ');
@@ -409,6 +433,7 @@ $(document).ready(function(){
       for(var i = 0; i < user.selectedEntries.length; i++){
         $(".printTagSearch").prepend(user.selectedEntries[i].asString);
       }
+
       $(".allBlogEntries").hide();
       $(".tagSearchResult").show();
       user.selectedEntries = [];
