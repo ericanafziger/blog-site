@@ -109,7 +109,6 @@ BlogEntry.prototype={
     }
   },
   toString: function(){
-    if (this.photos === "" ) {
     this.asString = '<div id="' + this.entryClass + '">' +
                       '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
                       '<h5><span class="date">' + this.time + '</span></h5>' +
@@ -118,80 +117,7 @@ BlogEntry.prototype={
                       '<br>' + this.videosAsStr +
                       '<div class="blogTags">' +
                       '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
-    } else if (this.photos === "" && this.video.start === "" && this.video.end === "") {
-      this.asString = '<div id="' + this.entryClass + '">' +
-                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
-                        '<h5><span class="date">' + this.time + '</span></h5>' +
-                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                        '<br>' +
-                        '<span class="postVideo">' + this.video.link + '</span>' +
-                        '<div class="blogTags">' +
-                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
-    } else if (this.photos === "" && this.video.start !== "" && this.video.end !== "") {
-      this.asString = '<div id="' + this.entryClass + '">' +
-                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
-                        '<h5><span class="date">' + this.time + '</span></h5>' +
-                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                        '<br>' +
-                        '<span class="postVideo">' + this.video.link + '</span>' +
-                        '<p class="center">Start and end time: <span class="timeCodes">' + this.video.start + ' - ' + this.video.end + '</span></p>' +
-                        '<div class="blogTags">' +
-                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
-    } else if (this.photos === "" && this.video.start !== "" && this.video.end === "") {
-      this.asString = '<div id="' + this.entryClass + '">' +
-                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
-                        '<h5><span class="date">' + this.time + '</span></h5>' +
-                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                        '<br>' +
-                        '<span class="postVideo">' + this.video.link + '</span>' +
-                        '<p class="center">Start time: <span class="timeCodes">' + this.video.start +
-                        '</span></p>' +
-                        '<div class="blogTags">' +
-                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
-    } else if (this.photos === "" && this.video.start === "" && this.video.end !== "") {
-      this.asString = '<div id="' + this.entryClass + '">' +
-                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
-                        '<h5><span class="date">' + this.time + '</span></h5>' +
-                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                        '<br>' +
-                        '<span class="postVideo">' + this.video.link + '</span>' +
-                        '<p class="center">End time: <span class="timeCodes">' + this.video.end +
-                        '</span></p>' +
-                        '<div class="blogTags">' +
-                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
-    } else if (this.video.start === "" && this.video.end === "") {
-      this.asString = '<div id="' + this.entryClass + '">' +
-                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
-                        '<h5><span class="date">' + this.time + '</span></h5>' +
-                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                        '<span class="postImage"><img src = "' + this.photos + '">' + '</span>'+
-                        '<br>' +
-                        '<span class="postVideo">' + this.video.link + '</span>' +
-                        '<div class="blogTags">' +
-                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
-    } else if (this.video.start !== "" && this.video.end === "") {
-      this.asString = '<div id="' + this.entryClass + '">' +
-                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
-                        '<h5><span class="date">' + this.time + '</span></h5>' +
-                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                        '<span class="postImage"><img src = "' + this.photos + '">' +'</span>'+
-                        '<br>' +
-                        '<span class="postVideo">' + this.video.link + '</span>' +
-                        '<p class="center">Start time: <span class="timeCodes">' + this.video.start + '</span></p>' +
-                        '<div class="blogTags">' +
-                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
-    } else if (this.video.end !== "" && this.video.start === "") {
-      this.asString = '<div id="' + this.entryClass + '">' +
-                        '<h2><span class="postTitle">' + this.entryTitle + '</span></h2>' +
-                        '<h5><span class="date">' + this.time + '</span></h5>' +
-                        '<span class="postBodyCopy"><p>' + this.entryText + '</p></span>' +
-                        '<span class="postImage"><img src = "' + this.photos + '">' + '</span>'+
-                        '<br>' +
-                        '<span class="postVideo">' + this.video.link + '</span>' +
-                        '<p class="center">End time: <span class="timeCodes">' + this.video.end + '</span></p>' +
-                        '<div class="blogTags">' +
-                        '<br>' + this.tagsAsStr + '<br><br></div><br><br></div>';
-    }
+
   },
   toListItem: function() {
     this.listItem = '<li id = "sidebarListItem'+ this.entryClass + '"><a href="#' + this.entryClass + '">' +  this.entryTitle + '</a><span id= "X' + this.entryClass + '" class="xIcon"><img src="img/redX.png" alt= "X"></span></li>';
@@ -297,7 +223,6 @@ $(document).ready(function(){
     $("#mainblog").delay(1000).fadeIn(1000);
     $("#userSidebar").delay(1000).fadeIn(1000);
     showSidebarInput();
-    console.log(user);
   });
 
   //adds another input box for another tag
@@ -350,13 +275,27 @@ $(document).ready(function(){
   $(".clickable").click(function(){
     alert('1. Go to http://www.youtube.com \n2. Search and open your desired video \n3. Below the video, click the share button (look for the right-pointing arrow) \n4. Click the embed button that appears. \n5. Copy the embed URL to be pasted into your blog form.');
   });
-
+  var reset = function(){
+    $(".blogEntryTitle").val("");
+    $(".blogEntryImage").val("");
+    $(".blogEntryContent").val("");
+    $(".blogEntryVid").val("");
+    $(".vidStartTime").val("");
+    $(".vidEndTime").val("");
+    $(".blogEntryTags").each(function() {
+      $(this).val("");
+    });
+  }
   //submit for new blog entry
   $(".blogEntryForm").submit(function(event){
     event.preventDefault();
+    var empty = false;
+    var entries = [];
     var entryTitle = $(".blogEntryTitle").val();
     var photos = $(".blogEntryImage").val();
     var entryText = $(".blogEntryContent").val();
+    entries.push(entryTitle, photos, entryText);
+
     var submitTime = time();
 
     var blogEntry = new BlogEntry(submitTime, entryTitle, photos, [], entryText);
@@ -366,8 +305,8 @@ $(document).ready(function(){
       var entryVideo = $(this).find("input.blogEntryVid").val();
       var startTime = $(this).find("input.vidStartTime").val();
       var endTime = $(this).find("input.vidEndTime").val();
+      entries.push(entryVideo, startTime, endTime);
       var videoEntry = new Video(entryVideo, startTime, endTime);
-
       blogEntry.video.push(videoEntry);
     });
 
@@ -383,52 +322,81 @@ $(document).ready(function(){
     blogEntry.getVideoStr();
     blogEntry.toString();
 
-
     var XentryClassStr = '#X' + blogEntry.entryClass + ' img';
     var entryClassStr = '#' + blogEntry.entryClass;
     var sidebarListItemClassStr = '#sidebarListItem' + blogEntry.entryClass;
     blogEntry.toListItem();
-    user.blogEntries.push(blogEntry);
-    $("#sidebarBlogList").prepend(blogEntry.listItem);
-    $(".allBlogEntries").prepend(blogEntry.asString);
 
-    $(XentryClassStr).click(function(){
-        $(sidebarListItemClassStr).hide();
-        $(entryClassStr).hide();
-    });
 
-    $(".allBlogEntries").delay(700).fadeIn();
-    $("#newBlogEntry").fadeOut();
-    $(".blogEntryTitle").val("");
-    $(".blogEntryImage").val("");
-    $(".blogEntryContent").val("");
-    $(".blogEntryVid").val("");
-    $(".vidStartTime").val("");
-    $(".vidEndTime").val("");
-    $(".blogEntryTags").each(function() {
-      $(this).val("");
-    });
 
-    $(".blogTagID").click(function(){
-      var tagClasses = $(this).attr('class').split(' ');
-      for(var i = 0; i < user.blogEntries.length; i++){
-        for(var j = 0; j < user.blogEntries[i].entryTags.length; j++){
-          if(tagClasses[1] === user.blogEntries[i].entryTags[j]){
-            user.selectedEntries.push(user.blogEntries[i]);
+
+
+    if(entries.indexOf("") !== -1){
+      if(window.confirm("Your blog might look a little wonky if you don't fill out all the forms. Click OK if you want to leave them empty, click cancel if you would like to fill them out.")){
+        user.blogEntries.push(blogEntry);
+        $("#sidebarBlogList").prepend(blogEntry.listItem);
+        $(".allBlogEntries").prepend(blogEntry.asString);
+        $(XentryClassStr).click(function(){
+            $(sidebarListItemClassStr).hide();
+            $(entryClassStr).hide();
+        });
+        $(".blogTagID").click(function(){
+          var tagClasses = $(this).attr('class').split(' ');
+          for(var i = 0; i < user.blogEntries.length; i++){
+            for(var j = 0; j < user.blogEntries[i].entryTags.length; j++){
+              if(tagClasses[1] === user.blogEntries[i].entryTags[j]){
+                user.selectedEntries.push(user.blogEntries[i]);
+              }
+            }
+          }
+          $(".printTagSearch").text("");
+
+          for(var i = 0; i < user.selectedEntries.length; i++){
+            $(".printTagSearch").prepend(user.selectedEntries[i].asString);
+          }
+
+          $(".allBlogEntries").hide();
+          $(".tagSearchResult").show();
+          user.selectedEntries = [];
+        });
+        $(".allBlogEntries").delay(700).fadeIn();
+        $("#newBlogEntry").fadeOut();
+        reset();
+      }
+    }
+    else{
+      user.blogEntries.push(blogEntry);
+      $("#sidebarBlogList").prepend(blogEntry.listItem);
+      $(".allBlogEntries").prepend(blogEntry.asString);
+      $(XentryClassStr).click(function(){
+          $(sidebarListItemClassStr).hide();
+          $(entryClassStr).hide();
+      });
+      $(".blogTagID").click(function(){
+        var tagClasses = $(this).attr('class').split(' ');
+        for(var i = 0; i < user.blogEntries.length; i++){
+          for(var j = 0; j < user.blogEntries[i].entryTags.length; j++){
+            if(tagClasses[1] === user.blogEntries[i].entryTags[j]){
+              user.selectedEntries.push(user.blogEntries[i]);
+            }
           }
         }
-      }
-      $(".printTagSearch").text("");
+        $(".printTagSearch").text("");
 
-      for(var i = 0; i < user.selectedEntries.length; i++){
-        $(".printTagSearch").prepend(user.selectedEntries[i].asString);
-      }
-      $(".allBlogEntries").hide();
-      $(".tagSearchResult").show();
-      user.selectedEntries = [];
-    });
-});
+        for(var i = 0; i < user.selectedEntries.length; i++){
+          $(".printTagSearch").prepend(user.selectedEntries[i].asString);
+        }
 
+        $(".allBlogEntries").hide();
+        $(".tagSearchResult").show();
+        user.selectedEntries = [];
+      });
+      $(".allBlogEntries").delay(700).fadeIn();
+      $("#newBlogEntry").fadeOut();
+      reset();
+    }
+  });
+//end of submit function
   $("#deleteEntryButton").click(function(){
     $(".xIcon img").show();
     $("#doneEntryButton").show();
@@ -439,4 +407,5 @@ $(document).ready(function(){
     $("#doneEntryButton").hide();
     $("#deleteEntryButton").show();
   });
-});
+
+}); // end of document reaady
