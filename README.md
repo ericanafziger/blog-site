@@ -1,6 +1,6 @@
 # _Musical Talismans_
 
-#### _Music Blog for Education, 11.8.2016_
+#### _Music Blog for Education, 11/8/2016_
 
 #### By _**Ezra Sandzer-Bell, Erica Nafziger, Lina Shadrach, Steve Burton**_
 
