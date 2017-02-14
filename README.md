@@ -5,7 +5,7 @@
 #### By _**Ezra Sandzer-Bell, Erica Nafziger, Lina Shadrach, Steve Burton**_
 
 ## Description
-
+ 
 _The site allows users to register a new blog. The purpose of the blog itself is to explore musical themes and compare them to one another._
 
 ## Specs (BDD)
